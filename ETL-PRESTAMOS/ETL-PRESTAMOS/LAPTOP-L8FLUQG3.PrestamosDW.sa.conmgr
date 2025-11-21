@@ -1,0 +1,14 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="LAPTOP-L8FLUQG3.PrestamosDW.sa"
+  DTS:DTSID="{E0733FF2-B724-490B-A48C-C3572556019E}"
+  DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=LAPTOP-L8FLUQG3;User ID=sa;Initial Catalog=PrestamosDW;TrustServerCertificate=True;Application Name=SSIS-ETL-PRESTAMOS-{E0733FF2-B724-490B-A48C-C3572556019E}LAPTOP-L8FLUQG3.PrestamosDW.sa;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAGWg5rYfOR02yuYjFgPoSagAAAAACAAAAAAAQZgAAAAEAACAAAAD79hj+buQ5imQAnm8UM01DKhA9qrgqZbhlqK73CLkRTwAAAAAOgAAAAAIAACAAAAAJXjbBatkB/G1N2oOsM4isnCArHfvYq+d98UQKsvbX+4AAAABy/siyf8WWvE0e5qL6ifcOgw9WZcGcQ+u1QW755DQGBl9Jm0Tl0NopsBgwwoWJSIeFtMZXAePlR5lMSXKEgrdP80ha7N5cPYyT4uBiop57zdzCe+riK8RH7s56NYuS5dRWG7iqgUGPJ7iz6rWi//8IxVhxrqwbDzSMqlgVlNa77kAAAABFfQMrakGEgXWACTrRYW2ImLlwZsiPkXVA8LE0a8Z7mNFNbI1qoXBLpyBZ+sSwuYlq/VcG5FfjEgiJJXDl6d+H</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

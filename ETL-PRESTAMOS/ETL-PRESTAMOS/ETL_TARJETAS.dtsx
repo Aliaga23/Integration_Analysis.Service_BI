@@ -1,0 +1,2609 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="11/14/2025 4:55:00 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="LAPTOP-L8FLUQG3"
+  DTS:CreatorName="LAPTOP-L8FLUQG3\jaav2"
+  DTS:DTSID="{122325C5-507E-46B7-ACE1-EE04A148695B}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5685.0"
+  DTS:LocaleID="16394"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="13"
+  DTS:VersionGUID="{10B030CD-9AF7-4D3A-808C-475489DDDEA3}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LAPTOP-L8FLUQG3.TarjetasDW]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{9160CC29-D97B-4961-A1FF-1B2087CDAF23}"
+      DTS:ObjectName="LAPTOP-L8FLUQG3.TarjetasDW">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=LAPTOP-L8FLUQG3;Initial Catalog=TarjetasDW;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{9160CC29-D97B-4961-A1FF-1B2087CDAF23}LAPTOP-L8FLUQG3.TarjetasDW;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\DIM CLIENTE"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{DD66E3AD-C787-46F1-A631-1D9201427689}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DIM CLIENTE"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\DIM CLIENTE\ADO NET Destination"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Loads data into an ADO.NET-compliant database that uses a database table or view. Load data into a new or existing table. For example, use an ADO.NET provider for ODBC to load data into an ODBC destination.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Loads data into an ADO.NET-compliant database that uses a database table or view. Load data into a new or existing table. For example, use an ADO.NET provider for ODBC to load data into an ODBC destination."
+              name="ADO NET Destination"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="The Destination database table name."
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">"dw"."DIM_CLIENTE"</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specify the number of rows per batch. The default is 0 which uses the same size as SSIS internal buffer. "
+                  expressionType="Notify"
+                  name="BatchSize">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out. A value of 0 indicates infinite time-out. "
+                  expressionType="Notify"
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether to use the SqlBulkCopy interface to improve the performance of bulk insert operations. Only certain providers support this interface."
+                  expressionType="Notify"
+                  name="UseBulkInsertWhenPossible">true</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.ADONETDestination</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DIM CLIENTE\ADO NET Destination.Connections[IDbConnection]"
+                  connectionManagerID="{365183DC-1081-460E-95B7-B2110627450E}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[LAPTOP-L8FLUQG3.TarjetasDW.sa]"
+                  description="Managed connection manager"
+                  name="IDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DIM CLIENTE\ADO NET Destination.Inputs[ADO NET Destination Input]"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="ADO NET Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DIM CLIENTE\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[ClienteId]"
+                      cachedDataType="i8"
+                      cachedName="ClienteId"
+                      externalMetadataColumnId="Package\DIM CLIENTE\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[ClienteId]"
+                      lineageId="Package\DIM CLIENTE\ADO NET Source.Outputs[ADO NET Source Output].Columns[ClienteId]" />
+                    <inputColumn
+                      refId="Package\DIM CLIENTE\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[NombreCompleto]"
+                      cachedDataType="wstr"
+                      cachedLength="201"
+                      cachedName="NombreCompleto"
+                      externalMetadataColumnId="Package\DIM CLIENTE\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[NombreCompleto]"
+                      lineageId="Package\DIM CLIENTE\ADO NET Source.Outputs[ADO NET Source Output].Columns[NombreCompleto]" />
+                    <inputColumn
+                      refId="Package\DIM CLIENTE\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[TipoCliente]"
+                      cachedDataType="wstr"
+                      cachedLength="16"
+                      cachedName="TipoCliente"
+                      externalMetadataColumnId="Package\DIM CLIENTE\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[TipoCliente]"
+                      lineageId="Package\DIM CLIENTE\ADO NET Source.Outputs[ADO NET Source Output].Columns[TipoCliente]" />
+                    <inputColumn
+                      refId="Package\DIM CLIENTE\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[PersonaId]"
+                      cachedDataType="i8"
+                      cachedName="PersonaId"
+                      externalMetadataColumnId="Package\DIM CLIENTE\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[PersonaId]"
+                      lineageId="Package\DIM CLIENTE\ADO NET Source.Outputs[ADO NET Source Output].Columns[PersonaId]" />
+                    <inputColumn
+                      refId="Package\DIM CLIENTE\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[OrganizacionId]"
+                      cachedDataType="i8"
+                      cachedName="OrganizacionId"
+                      externalMetadataColumnId="Package\DIM CLIENTE\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[OrganizacionId]"
+                      lineageId="Package\DIM CLIENTE\ADO NET Source.Outputs[ADO NET Source Output].Columns[OrganizacionId]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DIM CLIENTE\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[ClienteKey]"
+                      dataType="i4"
+                      name="ClienteKey" />
+                    <externalMetadataColumn
+                      refId="Package\DIM CLIENTE\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[ClienteId]"
+                      dataType="i8"
+                      name="ClienteId" />
+                    <externalMetadataColumn
+                      refId="Package\DIM CLIENTE\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[NombreCompleto]"
+                      dataType="wstr"
+                      length="200"
+                      name="NombreCompleto" />
+                    <externalMetadataColumn
+                      refId="Package\DIM CLIENTE\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[TipoCliente]"
+                      dataType="wstr"
+                      length="20"
+                      name="TipoCliente" />
+                    <externalMetadataColumn
+                      refId="Package\DIM CLIENTE\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[PersonaId]"
+                      dataType="i8"
+                      name="PersonaId" />
+                    <externalMetadataColumn
+                      refId="Package\DIM CLIENTE\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[OrganizacionId]"
+                      dataType="i8"
+                      name="OrganizacionId" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DIM CLIENTE\ADO NET Destination.Outputs[ADO NET Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="ADO NET Destination Error Output"
+                  synchronousInputId="Package\DIM CLIENTE\ADO NET Destination.Inputs[ADO NET Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DIM CLIENTE\ADO NET Destination.Outputs[ADO NET Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DIM CLIENTE\ADO NET Destination.Outputs[ADO NET Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DIM CLIENTE\ADO NET Destination.Outputs[ADO NET Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DIM CLIENTE\ADO NET Destination.Outputs[ADO NET Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DIM CLIENTE\ADO NET Source"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Consumes data from SQL Server, OLE DB, ODBC, or Oracle, using the corresponding .NET Framework data provider. Use a Transact-SQL statement to define the result set. For example, extract data from SQL Server with the .NET Framework data provider for SQL Server.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="Consumes data from SQL Server, OLE DB, ODBC, or Oracle, using the corresponding .NET Framework data provider. Use a Transact-SQL statement to define the result set. For example, extract data from SQL Server with the .NET Framework data provider for SQL Server."
+              name="ADO NET Source"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement used by the component to extract data."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">-- ================================================================
+-- ETL: DIM_CLIENTE
+-- ================================================================
+SELECT 
+    cl.ClienteId,
+    CASE 
+        WHEN cl.TipoCliente = 'INDIVIDUAL' THEN 
+            CONCAT(p.Nombres, ' ', p.Apellidos)
+        WHEN cl.TipoCliente = 'CORPORATE' THEN 
+            o.RazonSocial
+        ELSE 'N/A'
+    END AS NombreCompleto,
+    cl.TipoCliente,
+    cl.PersonaId,
+    cl.OrganizacionId
+FROM BnacoDB2.nucleo.Cliente cl
+LEFT JOIN BnacoDB2.nucleo.Persona p ON p.PersonaId = cl.PersonaId
+LEFT JOIN BnacoDB2.nucleo.Organizacion o ON o.OrganizacionId = cl.OrganizacionId
+WHERE NOT EXISTS (
+    SELECT 1 
+    FROM TarjetasDW.dw.DIM_CLIENTE d
+    WHERE d.ClienteId = cl.ClienteId
+);</property>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether to allow non-string external columns to be implicitly converted to strings at the output columns."
+                  name="AllowImplicitStringConversion">true</property>
+                <property
+                  dataType="System.String"
+                  description="The Source database table name."
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specify the mode to retrieve external column information"
+                  name="AccessMode"
+                  typeConverter="Microsoft.SqlServer.Dts.Pipeline.DataReaderSourceAdapter+EnumToStringConverter">2</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.DataReaderSourceAdapter</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DIM CLIENTE\ADO NET Source.Connections[IDbConnection]"
+                  connectionManagerID="{832E84BA-C233-4CCB-BB40-BE2225A191E0}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[LAPTOP-L8FLUQG3.BnacoDB2.sa]"
+                  description="Managed connection manager"
+                  name="IDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DIM CLIENTE\ADO NET Source.Outputs[ADO NET Source Output]"
+                  name="ADO NET Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DIM CLIENTE\ADO NET Source.Outputs[ADO NET Source Output].Columns[ClienteId]"
+                      dataType="i8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DIM CLIENTE\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[ClienteId]"
+                      lineageId="Package\DIM CLIENTE\ADO NET Source.Outputs[ADO NET Source Output].Columns[ClienteId]"
+                      name="ClienteId"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DIM CLIENTE\ADO NET Source.Outputs[ADO NET Source Output].Columns[NombreCompleto]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DIM CLIENTE\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[NombreCompleto]"
+                      length="201"
+                      lineageId="Package\DIM CLIENTE\ADO NET Source.Outputs[ADO NET Source Output].Columns[NombreCompleto]"
+                      name="NombreCompleto"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DIM CLIENTE\ADO NET Source.Outputs[ADO NET Source Output].Columns[TipoCliente]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DIM CLIENTE\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[TipoCliente]"
+                      length="16"
+                      lineageId="Package\DIM CLIENTE\ADO NET Source.Outputs[ADO NET Source Output].Columns[TipoCliente]"
+                      name="TipoCliente"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DIM CLIENTE\ADO NET Source.Outputs[ADO NET Source Output].Columns[PersonaId]"
+                      dataType="i8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DIM CLIENTE\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[PersonaId]"
+                      lineageId="Package\DIM CLIENTE\ADO NET Source.Outputs[ADO NET Source Output].Columns[PersonaId]"
+                      name="PersonaId"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DIM CLIENTE\ADO NET Source.Outputs[ADO NET Source Output].Columns[OrganizacionId]"
+                      dataType="i8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DIM CLIENTE\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[OrganizacionId]"
+                      lineageId="Package\DIM CLIENTE\ADO NET Source.Outputs[ADO NET Source Output].Columns[OrganizacionId]"
+                      name="OrganizacionId"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DIM CLIENTE\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[ClienteId]"
+                      dataType="i8"
+                      name="ClienteId" />
+                    <externalMetadataColumn
+                      refId="Package\DIM CLIENTE\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[NombreCompleto]"
+                      dataType="wstr"
+                      length="201"
+                      name="NombreCompleto" />
+                    <externalMetadataColumn
+                      refId="Package\DIM CLIENTE\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[TipoCliente]"
+                      dataType="wstr"
+                      length="16"
+                      name="TipoCliente" />
+                    <externalMetadataColumn
+                      refId="Package\DIM CLIENTE\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[PersonaId]"
+                      dataType="i8"
+                      name="PersonaId" />
+                    <externalMetadataColumn
+                      refId="Package\DIM CLIENTE\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[OrganizacionId]"
+                      dataType="i8"
+                      name="OrganizacionId" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DIM CLIENTE\ADO NET Source.Outputs[ADO NET Source Error Output]"
+                  isErrorOut="true"
+                  name="ADO NET Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DIM CLIENTE\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[ClienteId]"
+                      dataType="i8"
+                      lineageId="Package\DIM CLIENTE\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[ClienteId]"
+                      name="ClienteId" />
+                    <outputColumn
+                      refId="Package\DIM CLIENTE\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[NombreCompleto]"
+                      dataType="wstr"
+                      length="201"
+                      lineageId="Package\DIM CLIENTE\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[NombreCompleto]"
+                      name="NombreCompleto" />
+                    <outputColumn
+                      refId="Package\DIM CLIENTE\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[TipoCliente]"
+                      dataType="wstr"
+                      length="16"
+                      lineageId="Package\DIM CLIENTE\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[TipoCliente]"
+                      name="TipoCliente" />
+                    <outputColumn
+                      refId="Package\DIM CLIENTE\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[PersonaId]"
+                      dataType="i8"
+                      lineageId="Package\DIM CLIENTE\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[PersonaId]"
+                      name="PersonaId" />
+                    <outputColumn
+                      refId="Package\DIM CLIENTE\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[OrganizacionId]"
+                      dataType="i8"
+                      lineageId="Package\DIM CLIENTE\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[OrganizacionId]"
+                      name="OrganizacionId" />
+                    <outputColumn
+                      refId="Package\DIM CLIENTE\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DIM CLIENTE\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DIM CLIENTE\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DIM CLIENTE\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DIM CLIENTE.Paths[ADO NET Source Output]"
+              endId="Package\DIM CLIENTE\ADO NET Destination.Inputs[ADO NET Destination Input]"
+              name="ADO NET Source Output"
+              startId="Package\DIM CLIENTE\ADO NET Source.Outputs[ADO NET Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\DIM COMERCIO"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{b36c8aa7-107a-4995-a07e-2e5adfdbb5d3}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DIM COMERCIO"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\DIM COMERCIO\ADO NET Destination"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Loads data into an ADO.NET-compliant database that uses a database table or view. Load data into a new or existing table. For example, use an ADO.NET provider for ODBC to load data into an ODBC destination.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Loads data into an ADO.NET-compliant database that uses a database table or view. Load data into a new or existing table. For example, use an ADO.NET provider for ODBC to load data into an ODBC destination."
+              name="ADO NET Destination"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="The Destination database table name."
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">"dw"."DIM_COMERCIO"</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specify the number of rows per batch. The default is 0 which uses the same size as SSIS internal buffer. "
+                  expressionType="Notify"
+                  name="BatchSize">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out. A value of 0 indicates infinite time-out. "
+                  expressionType="Notify"
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether to use the SqlBulkCopy interface to improve the performance of bulk insert operations. Only certain providers support this interface."
+                  expressionType="Notify"
+                  name="UseBulkInsertWhenPossible">true</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.ADONETDestination</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DIM COMERCIO\ADO NET Destination.Connections[IDbConnection]"
+                  connectionManagerID="{365183DC-1081-460E-95B7-B2110627450E}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[LAPTOP-L8FLUQG3.TarjetasDW.sa]"
+                  description="Managed connection manager"
+                  name="IDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DIM COMERCIO\ADO NET Destination.Inputs[ADO NET Destination Input]"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="ADO NET Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DIM COMERCIO\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[ComercioId]"
+                      cachedDataType="i8"
+                      cachedName="ComercioId"
+                      externalMetadataColumnId="Package\DIM COMERCIO\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[ComercioId]"
+                      lineageId="Package\DIM COMERCIO\DIM COMERCIO.Outputs[ADO NET Source Output].Columns[ComercioId]" />
+                    <inputColumn
+                      refId="Package\DIM COMERCIO\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[NombreComercio]"
+                      cachedDataType="wstr"
+                      cachedLength="200"
+                      cachedName="NombreComercio"
+                      externalMetadataColumnId="Package\DIM COMERCIO\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[NombreComercio]"
+                      lineageId="Package\DIM COMERCIO\DIM COMERCIO.Outputs[ADO NET Source Output].Columns[NombreComercio]" />
+                    <inputColumn
+                      refId="Package\DIM COMERCIO\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[PaisNombre]"
+                      cachedDataType="wstr"
+                      cachedLength="128"
+                      cachedName="PaisNombre"
+                      externalMetadataColumnId="Package\DIM COMERCIO\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[PaisNombre]"
+                      lineageId="Package\DIM COMERCIO\DIM COMERCIO.Outputs[ADO NET Source Output].Columns[PaisNombre]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DIM COMERCIO\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[ComercioKey]"
+                      dataType="i4"
+                      name="ComercioKey" />
+                    <externalMetadataColumn
+                      refId="Package\DIM COMERCIO\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[ComercioId]"
+                      dataType="i8"
+                      name="ComercioId" />
+                    <externalMetadataColumn
+                      refId="Package\DIM COMERCIO\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[NombreComercio]"
+                      dataType="wstr"
+                      length="200"
+                      name="NombreComercio" />
+                    <externalMetadataColumn
+                      refId="Package\DIM COMERCIO\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[PaisNombre]"
+                      dataType="wstr"
+                      length="100"
+                      name="PaisNombre" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DIM COMERCIO\ADO NET Destination.Outputs[ADO NET Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="ADO NET Destination Error Output"
+                  synchronousInputId="Package\DIM COMERCIO\ADO NET Destination.Inputs[ADO NET Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DIM COMERCIO\ADO NET Destination.Outputs[ADO NET Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DIM COMERCIO\ADO NET Destination.Outputs[ADO NET Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DIM COMERCIO\ADO NET Destination.Outputs[ADO NET Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DIM COMERCIO\ADO NET Destination.Outputs[ADO NET Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DIM COMERCIO\DIM COMERCIO"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Consumes data from SQL Server, OLE DB, ODBC, or Oracle, using the corresponding .NET Framework data provider. Use a Transact-SQL statement to define the result set. For example, extract data from SQL Server with the .NET Framework data provider for SQL Server.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="Consumes data from SQL Server, OLE DB, ODBC, or Oracle, using the corresponding .NET Framework data provider. Use a Transact-SQL statement to define the result set. For example, extract data from SQL Server with the .NET Framework data provider for SQL Server."
+              name="DIM COMERCIO"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement used by the component to extract data."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">-- ================================================================
+-- ETL: DIM_COMERCIO
+-- ================================================================
+SELECT 
+    c.ComercioId,
+    c.Nombre AS NombreComercio,
+    p.Nombre AS PaisNombre
+FROM BnacoDB2.tarjetas.Comercio c
+INNER JOIN BnacoDB2.referencial.Pais p ON p.PaisId = c.PaisId
+WHERE NOT EXISTS (
+    SELECT 1 
+    FROM TarjetasDW.dw.DIM_COMERCIO d
+    WHERE d.ComercioId = c.ComercioId
+);</property>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether to allow non-string external columns to be implicitly converted to strings at the output columns."
+                  name="AllowImplicitStringConversion">true</property>
+                <property
+                  dataType="System.String"
+                  description="The Source database table name."
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specify the mode to retrieve external column information"
+                  name="AccessMode"
+                  typeConverter="Microsoft.SqlServer.Dts.Pipeline.DataReaderSourceAdapter+EnumToStringConverter">2</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.DataReaderSourceAdapter</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DIM COMERCIO\DIM COMERCIO.Connections[IDbConnection]"
+                  connectionManagerID="{832E84BA-C233-4CCB-BB40-BE2225A191E0}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[LAPTOP-L8FLUQG3.BnacoDB2.sa]"
+                  description="Managed connection manager"
+                  name="IDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DIM COMERCIO\DIM COMERCIO.Outputs[ADO NET Source Output]"
+                  name="ADO NET Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DIM COMERCIO\DIM COMERCIO.Outputs[ADO NET Source Output].Columns[ComercioId]"
+                      dataType="i8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DIM COMERCIO\DIM COMERCIO.Outputs[ADO NET Source Output].ExternalColumns[ComercioId]"
+                      lineageId="Package\DIM COMERCIO\DIM COMERCIO.Outputs[ADO NET Source Output].Columns[ComercioId]"
+                      name="ComercioId"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DIM COMERCIO\DIM COMERCIO.Outputs[ADO NET Source Output].Columns[NombreComercio]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DIM COMERCIO\DIM COMERCIO.Outputs[ADO NET Source Output].ExternalColumns[NombreComercio]"
+                      length="200"
+                      lineageId="Package\DIM COMERCIO\DIM COMERCIO.Outputs[ADO NET Source Output].Columns[NombreComercio]"
+                      name="NombreComercio"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DIM COMERCIO\DIM COMERCIO.Outputs[ADO NET Source Output].Columns[PaisNombre]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DIM COMERCIO\DIM COMERCIO.Outputs[ADO NET Source Output].ExternalColumns[PaisNombre]"
+                      length="128"
+                      lineageId="Package\DIM COMERCIO\DIM COMERCIO.Outputs[ADO NET Source Output].Columns[PaisNombre]"
+                      name="PaisNombre"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DIM COMERCIO\DIM COMERCIO.Outputs[ADO NET Source Output].ExternalColumns[ComercioId]"
+                      dataType="i8"
+                      name="ComercioId" />
+                    <externalMetadataColumn
+                      refId="Package\DIM COMERCIO\DIM COMERCIO.Outputs[ADO NET Source Output].ExternalColumns[NombreComercio]"
+                      dataType="wstr"
+                      length="200"
+                      name="NombreComercio" />
+                    <externalMetadataColumn
+                      refId="Package\DIM COMERCIO\DIM COMERCIO.Outputs[ADO NET Source Output].ExternalColumns[PaisNombre]"
+                      dataType="wstr"
+                      length="128"
+                      name="PaisNombre" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DIM COMERCIO\DIM COMERCIO.Outputs[ADO NET Source Error Output]"
+                  isErrorOut="true"
+                  name="ADO NET Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DIM COMERCIO\DIM COMERCIO.Outputs[ADO NET Source Error Output].Columns[ComercioId]"
+                      dataType="i8"
+                      lineageId="Package\DIM COMERCIO\DIM COMERCIO.Outputs[ADO NET Source Error Output].Columns[ComercioId]"
+                      name="ComercioId" />
+                    <outputColumn
+                      refId="Package\DIM COMERCIO\DIM COMERCIO.Outputs[ADO NET Source Error Output].Columns[NombreComercio]"
+                      dataType="wstr"
+                      length="200"
+                      lineageId="Package\DIM COMERCIO\DIM COMERCIO.Outputs[ADO NET Source Error Output].Columns[NombreComercio]"
+                      name="NombreComercio" />
+                    <outputColumn
+                      refId="Package\DIM COMERCIO\DIM COMERCIO.Outputs[ADO NET Source Error Output].Columns[PaisNombre]"
+                      dataType="wstr"
+                      length="128"
+                      lineageId="Package\DIM COMERCIO\DIM COMERCIO.Outputs[ADO NET Source Error Output].Columns[PaisNombre]"
+                      name="PaisNombre" />
+                    <outputColumn
+                      refId="Package\DIM COMERCIO\DIM COMERCIO.Outputs[ADO NET Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DIM COMERCIO\DIM COMERCIO.Outputs[ADO NET Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DIM COMERCIO\DIM COMERCIO.Outputs[ADO NET Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DIM COMERCIO\DIM COMERCIO.Outputs[ADO NET Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DIM COMERCIO.Paths[ADO NET Source Output]"
+              endId="Package\DIM COMERCIO\ADO NET Destination.Inputs[ADO NET Destination Input]"
+              name="ADO NET Source Output"
+              startId="Package\DIM COMERCIO\DIM COMERCIO.Outputs[ADO NET Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\DIM PRODUCTO"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{729a3269-0448-4fb6-a164-e783dab811a4}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DIM PRODUCTO"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\DIM PRODUCTO\ADO NET Destination"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Loads data into an ADO.NET-compliant database that uses a database table or view. Load data into a new or existing table. For example, use an ADO.NET provider for ODBC to load data into an ODBC destination.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Loads data into an ADO.NET-compliant database that uses a database table or view. Load data into a new or existing table. For example, use an ADO.NET provider for ODBC to load data into an ODBC destination."
+              name="ADO NET Destination"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="The Destination database table name."
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">"dw"."DIM_PRODUCTO"</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specify the number of rows per batch. The default is 0 which uses the same size as SSIS internal buffer. "
+                  expressionType="Notify"
+                  name="BatchSize">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out. A value of 0 indicates infinite time-out. "
+                  expressionType="Notify"
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether to use the SqlBulkCopy interface to improve the performance of bulk insert operations. Only certain providers support this interface."
+                  expressionType="Notify"
+                  name="UseBulkInsertWhenPossible">true</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.ADONETDestination</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DIM PRODUCTO\ADO NET Destination.Connections[IDbConnection]"
+                  connectionManagerID="{365183DC-1081-460E-95B7-B2110627450E}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[LAPTOP-L8FLUQG3.TarjetasDW.sa]"
+                  description="Managed connection manager"
+                  name="IDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DIM PRODUCTO\ADO NET Destination.Inputs[ADO NET Destination Input]"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="ADO NET Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DIM PRODUCTO\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[ProductoId]"
+                      cachedDataType="i8"
+                      cachedName="ProductoId"
+                      externalMetadataColumnId="Package\DIM PRODUCTO\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[ProductoId]"
+                      lineageId="Package\DIM PRODUCTO\ADO NET Source.Outputs[ADO NET Source Output].Columns[ProductoId]" />
+                    <inputColumn
+                      refId="Package\DIM PRODUCTO\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Codigo]"
+                      cachedDataType="wstr"
+                      cachedLength="32"
+                      cachedName="Codigo"
+                      externalMetadataColumnId="Package\DIM PRODUCTO\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Codigo]"
+                      lineageId="Package\DIM PRODUCTO\ADO NET Source.Outputs[ADO NET Source Output].Columns[Codigo]" />
+                    <inputColumn
+                      refId="Package\DIM PRODUCTO\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Nombre]"
+                      cachedDataType="wstr"
+                      cachedLength="128"
+                      cachedName="Nombre"
+                      externalMetadataColumnId="Package\DIM PRODUCTO\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Nombre]"
+                      lineageId="Package\DIM PRODUCTO\ADO NET Source.Outputs[ADO NET Source Output].Columns[Nombre]" />
+                    <inputColumn
+                      refId="Package\DIM PRODUCTO\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Categoria]"
+                      cachedDataType="wstr"
+                      cachedLength="32"
+                      cachedName="Categoria"
+                      externalMetadataColumnId="Package\DIM PRODUCTO\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Categoria]"
+                      lineageId="Package\DIM PRODUCTO\ADO NET Source.Outputs[ADO NET Source Output].Columns[Categoria]" />
+                    <inputColumn
+                      refId="Package\DIM PRODUCTO\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[NombreMoneda]"
+                      cachedDataType="wstr"
+                      cachedLength="64"
+                      cachedName="NombreMoneda"
+                      externalMetadataColumnId="Package\DIM PRODUCTO\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[NombreMoneda]"
+                      lineageId="Package\DIM PRODUCTO\ADO NET Source.Outputs[ADO NET Source Output].Columns[NombreMoneda]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DIM PRODUCTO\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[ProductoKey]"
+                      dataType="i4"
+                      name="ProductoKey" />
+                    <externalMetadataColumn
+                      refId="Package\DIM PRODUCTO\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[ProductoId]"
+                      dataType="i8"
+                      name="ProductoId" />
+                    <externalMetadataColumn
+                      refId="Package\DIM PRODUCTO\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Codigo]"
+                      dataType="wstr"
+                      length="50"
+                      name="Codigo" />
+                    <externalMetadataColumn
+                      refId="Package\DIM PRODUCTO\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Nombre]"
+                      dataType="wstr"
+                      length="200"
+                      name="Nombre" />
+                    <externalMetadataColumn
+                      refId="Package\DIM PRODUCTO\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Categoria]"
+                      dataType="wstr"
+                      length="50"
+                      name="Categoria" />
+                    <externalMetadataColumn
+                      refId="Package\DIM PRODUCTO\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[NombreMoneda]"
+                      dataType="wstr"
+                      length="50"
+                      name="NombreMoneda" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DIM PRODUCTO\ADO NET Destination.Outputs[ADO NET Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="ADO NET Destination Error Output"
+                  synchronousInputId="Package\DIM PRODUCTO\ADO NET Destination.Inputs[ADO NET Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DIM PRODUCTO\ADO NET Destination.Outputs[ADO NET Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DIM PRODUCTO\ADO NET Destination.Outputs[ADO NET Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DIM PRODUCTO\ADO NET Destination.Outputs[ADO NET Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DIM PRODUCTO\ADO NET Destination.Outputs[ADO NET Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DIM PRODUCTO\ADO NET Source"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Consumes data from SQL Server, OLE DB, ODBC, or Oracle, using the corresponding .NET Framework data provider. Use a Transact-SQL statement to define the result set. For example, extract data from SQL Server with the .NET Framework data provider for SQL Server.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="Consumes data from SQL Server, OLE DB, ODBC, or Oracle, using the corresponding .NET Framework data provider. Use a Transact-SQL statement to define the result set. For example, extract data from SQL Server with the .NET Framework data provider for SQL Server."
+              name="ADO NET Source"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement used by the component to extract data."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">-- ================================================================
+-- ETL: DIM_PRODUCTO
+-- ================================================================
+SELECT 
+    p.ProductoId,
+    p.Codigo,
+    p.Nombre,
+    p.Categoria,
+    m.Nombre AS NombreMoneda
+FROM BnacoDB2.nucleo.Producto p
+INNER JOIN BnacoDB2.referencial.Moneda m ON m.MonedaId = p.MonedaId
+WHERE NOT EXISTS (
+    SELECT 1 
+    FROM TarjetasDW.dw.DIM_PRODUCTO d
+    WHERE d.ProductoId = p.ProductoId
+);</property>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether to allow non-string external columns to be implicitly converted to strings at the output columns."
+                  name="AllowImplicitStringConversion">true</property>
+                <property
+                  dataType="System.String"
+                  description="The Source database table name."
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specify the mode to retrieve external column information"
+                  name="AccessMode"
+                  typeConverter="Microsoft.SqlServer.Dts.Pipeline.DataReaderSourceAdapter+EnumToStringConverter">2</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.DataReaderSourceAdapter</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DIM PRODUCTO\ADO NET Source.Connections[IDbConnection]"
+                  connectionManagerID="{832E84BA-C233-4CCB-BB40-BE2225A191E0}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[LAPTOP-L8FLUQG3.BnacoDB2.sa]"
+                  description="Managed connection manager"
+                  name="IDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DIM PRODUCTO\ADO NET Source.Outputs[ADO NET Source Output]"
+                  name="ADO NET Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DIM PRODUCTO\ADO NET Source.Outputs[ADO NET Source Output].Columns[ProductoId]"
+                      dataType="i8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DIM PRODUCTO\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[ProductoId]"
+                      lineageId="Package\DIM PRODUCTO\ADO NET Source.Outputs[ADO NET Source Output].Columns[ProductoId]"
+                      name="ProductoId"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DIM PRODUCTO\ADO NET Source.Outputs[ADO NET Source Output].Columns[Codigo]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DIM PRODUCTO\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[Codigo]"
+                      length="32"
+                      lineageId="Package\DIM PRODUCTO\ADO NET Source.Outputs[ADO NET Source Output].Columns[Codigo]"
+                      name="Codigo"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DIM PRODUCTO\ADO NET Source.Outputs[ADO NET Source Output].Columns[Nombre]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DIM PRODUCTO\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[Nombre]"
+                      length="128"
+                      lineageId="Package\DIM PRODUCTO\ADO NET Source.Outputs[ADO NET Source Output].Columns[Nombre]"
+                      name="Nombre"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DIM PRODUCTO\ADO NET Source.Outputs[ADO NET Source Output].Columns[Categoria]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DIM PRODUCTO\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[Categoria]"
+                      length="32"
+                      lineageId="Package\DIM PRODUCTO\ADO NET Source.Outputs[ADO NET Source Output].Columns[Categoria]"
+                      name="Categoria"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DIM PRODUCTO\ADO NET Source.Outputs[ADO NET Source Output].Columns[NombreMoneda]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DIM PRODUCTO\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[NombreMoneda]"
+                      length="64"
+                      lineageId="Package\DIM PRODUCTO\ADO NET Source.Outputs[ADO NET Source Output].Columns[NombreMoneda]"
+                      name="NombreMoneda"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DIM PRODUCTO\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[ProductoId]"
+                      dataType="i8"
+                      name="ProductoId" />
+                    <externalMetadataColumn
+                      refId="Package\DIM PRODUCTO\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[Codigo]"
+                      dataType="wstr"
+                      length="32"
+                      name="Codigo" />
+                    <externalMetadataColumn
+                      refId="Package\DIM PRODUCTO\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[Nombre]"
+                      dataType="wstr"
+                      length="128"
+                      name="Nombre" />
+                    <externalMetadataColumn
+                      refId="Package\DIM PRODUCTO\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[Categoria]"
+                      dataType="wstr"
+                      length="32"
+                      name="Categoria" />
+                    <externalMetadataColumn
+                      refId="Package\DIM PRODUCTO\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[NombreMoneda]"
+                      dataType="wstr"
+                      length="64"
+                      name="NombreMoneda" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DIM PRODUCTO\ADO NET Source.Outputs[ADO NET Source Error Output]"
+                  isErrorOut="true"
+                  name="ADO NET Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DIM PRODUCTO\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[ProductoId]"
+                      dataType="i8"
+                      lineageId="Package\DIM PRODUCTO\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[ProductoId]"
+                      name="ProductoId" />
+                    <outputColumn
+                      refId="Package\DIM PRODUCTO\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[Codigo]"
+                      dataType="wstr"
+                      length="32"
+                      lineageId="Package\DIM PRODUCTO\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[Codigo]"
+                      name="Codigo" />
+                    <outputColumn
+                      refId="Package\DIM PRODUCTO\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[Nombre]"
+                      dataType="wstr"
+                      length="128"
+                      lineageId="Package\DIM PRODUCTO\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[Nombre]"
+                      name="Nombre" />
+                    <outputColumn
+                      refId="Package\DIM PRODUCTO\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[Categoria]"
+                      dataType="wstr"
+                      length="32"
+                      lineageId="Package\DIM PRODUCTO\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[Categoria]"
+                      name="Categoria" />
+                    <outputColumn
+                      refId="Package\DIM PRODUCTO\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[NombreMoneda]"
+                      dataType="wstr"
+                      length="64"
+                      lineageId="Package\DIM PRODUCTO\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[NombreMoneda]"
+                      name="NombreMoneda" />
+                    <outputColumn
+                      refId="Package\DIM PRODUCTO\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DIM PRODUCTO\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DIM PRODUCTO\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DIM PRODUCTO\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DIM PRODUCTO.Paths[ADO NET Source Output]"
+              endId="Package\DIM PRODUCTO\ADO NET Destination.Inputs[ADO NET Destination Input]"
+              name="ADO NET Source Output"
+              startId="Package\DIM PRODUCTO\ADO NET Source.Outputs[ADO NET Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\DIM SUCURSAL"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{671ee362-4ee3-41b2-ac2b-a52641616c9c}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DIM SUCURSAL"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\DIM SUCURSAL\ADO NET Destination"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Loads data into an ADO.NET-compliant database that uses a database table or view. Load data into a new or existing table. For example, use an ADO.NET provider for ODBC to load data into an ODBC destination.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Loads data into an ADO.NET-compliant database that uses a database table or view. Load data into a new or existing table. For example, use an ADO.NET provider for ODBC to load data into an ODBC destination."
+              name="ADO NET Destination"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="The Destination database table name."
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">"dw"."DIM_SUCURSAL"</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specify the number of rows per batch. The default is 0 which uses the same size as SSIS internal buffer. "
+                  expressionType="Notify"
+                  name="BatchSize">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out. A value of 0 indicates infinite time-out. "
+                  expressionType="Notify"
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether to use the SqlBulkCopy interface to improve the performance of bulk insert operations. Only certain providers support this interface."
+                  expressionType="Notify"
+                  name="UseBulkInsertWhenPossible">true</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.ADONETDestination</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DIM SUCURSAL\ADO NET Destination.Connections[IDbConnection]"
+                  connectionManagerID="{365183DC-1081-460E-95B7-B2110627450E}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[LAPTOP-L8FLUQG3.TarjetasDW.sa]"
+                  description="Managed connection manager"
+                  name="IDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DIM SUCURSAL\ADO NET Destination.Inputs[ADO NET Destination Input]"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="ADO NET Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DIM SUCURSAL\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[SucursalId]"
+                      cachedDataType="i8"
+                      cachedName="SucursalId"
+                      externalMetadataColumnId="Package\DIM SUCURSAL\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[SucursalId]"
+                      lineageId="Package\DIM SUCURSAL\ADO NET Source.Outputs[ADO NET Source Output].Columns[SucursalId]" />
+                    <inputColumn
+                      refId="Package\DIM SUCURSAL\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Codigo]"
+                      cachedDataType="wstr"
+                      cachedLength="16"
+                      cachedName="Codigo"
+                      externalMetadataColumnId="Package\DIM SUCURSAL\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Codigo]"
+                      lineageId="Package\DIM SUCURSAL\ADO NET Source.Outputs[ADO NET Source Output].Columns[Codigo]" />
+                    <inputColumn
+                      refId="Package\DIM SUCURSAL\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Nombre]"
+                      cachedDataType="wstr"
+                      cachedLength="128"
+                      cachedName="Nombre"
+                      externalMetadataColumnId="Package\DIM SUCURSAL\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Nombre]"
+                      lineageId="Package\DIM SUCURSAL\ADO NET Source.Outputs[ADO NET Source Output].Columns[Nombre]" />
+                    <inputColumn
+                      refId="Package\DIM SUCURSAL\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Ciudad]"
+                      cachedDataType="wstr"
+                      cachedLength="128"
+                      cachedName="Ciudad"
+                      externalMetadataColumnId="Package\DIM SUCURSAL\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Ciudad]"
+                      lineageId="Package\DIM SUCURSAL\ADO NET Source.Outputs[ADO NET Source Output].Columns[Ciudad]" />
+                    <inputColumn
+                      refId="Package\DIM SUCURSAL\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Region]"
+                      cachedDataType="wstr"
+                      cachedLength="128"
+                      cachedName="Region"
+                      externalMetadataColumnId="Package\DIM SUCURSAL\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Region]"
+                      lineageId="Package\DIM SUCURSAL\ADO NET Source.Outputs[ADO NET Source Output].Columns[Region]" />
+                    <inputColumn
+                      refId="Package\DIM SUCURSAL\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Pais]"
+                      cachedDataType="wstr"
+                      cachedLength="128"
+                      cachedName="Pais"
+                      externalMetadataColumnId="Package\DIM SUCURSAL\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Pais]"
+                      lineageId="Package\DIM SUCURSAL\ADO NET Source.Outputs[ADO NET Source Output].Columns[Pais]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DIM SUCURSAL\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[SucursalKey]"
+                      dataType="i4"
+                      name="SucursalKey" />
+                    <externalMetadataColumn
+                      refId="Package\DIM SUCURSAL\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[SucursalId]"
+                      dataType="i4"
+                      name="SucursalId" />
+                    <externalMetadataColumn
+                      refId="Package\DIM SUCURSAL\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Codigo]"
+                      dataType="wstr"
+                      length="50"
+                      name="Codigo" />
+                    <externalMetadataColumn
+                      refId="Package\DIM SUCURSAL\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Nombre]"
+                      dataType="wstr"
+                      length="200"
+                      name="Nombre" />
+                    <externalMetadataColumn
+                      refId="Package\DIM SUCURSAL\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Ciudad]"
+                      dataType="wstr"
+                      length="100"
+                      name="Ciudad" />
+                    <externalMetadataColumn
+                      refId="Package\DIM SUCURSAL\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Region]"
+                      dataType="wstr"
+                      length="100"
+                      name="Region" />
+                    <externalMetadataColumn
+                      refId="Package\DIM SUCURSAL\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Pais]"
+                      dataType="wstr"
+                      length="100"
+                      name="Pais" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DIM SUCURSAL\ADO NET Destination.Outputs[ADO NET Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="ADO NET Destination Error Output"
+                  synchronousInputId="Package\DIM SUCURSAL\ADO NET Destination.Inputs[ADO NET Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DIM SUCURSAL\ADO NET Destination.Outputs[ADO NET Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DIM SUCURSAL\ADO NET Destination.Outputs[ADO NET Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DIM SUCURSAL\ADO NET Destination.Outputs[ADO NET Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DIM SUCURSAL\ADO NET Destination.Outputs[ADO NET Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DIM SUCURSAL\ADO NET Source"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Consumes data from SQL Server, OLE DB, ODBC, or Oracle, using the corresponding .NET Framework data provider. Use a Transact-SQL statement to define the result set. For example, extract data from SQL Server with the .NET Framework data provider for SQL Server.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="Consumes data from SQL Server, OLE DB, ODBC, or Oracle, using the corresponding .NET Framework data provider. Use a Transact-SQL statement to define the result set. For example, extract data from SQL Server with the .NET Framework data provider for SQL Server."
+              name="ADO NET Source"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement used by the component to extract data."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">-- ================================================================
+-- ETL: DIM_SUCURSAL
+-- ================================================================
+SELECT 
+    s.SucursalId,
+    s.Codigo,
+    s.Nombre,
+    c.Nombre AS Ciudad,
+    r.Nombre AS Region,
+    p.Nombre AS Pais
+FROM BnacoDB2.nucleo.Sucursal s
+INNER JOIN BnacoDB2.referencial.Ciudad c ON c.CiudadId = s.CiudadId
+INNER JOIN BnacoDB2.referencial.Region r ON r.RegionId = c.RegionId
+INNER JOIN BnacoDB2.referencial.Pais p ON p.PaisId = r.PaisId
+WHERE NOT EXISTS (
+    SELECT 1 
+    FROM TarjetasDW.dw.DIM_SUCURSAL d
+    WHERE d.SucursalId = s.SucursalId
+);</property>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether to allow non-string external columns to be implicitly converted to strings at the output columns."
+                  name="AllowImplicitStringConversion">true</property>
+                <property
+                  dataType="System.String"
+                  description="The Source database table name."
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specify the mode to retrieve external column information"
+                  name="AccessMode"
+                  typeConverter="Microsoft.SqlServer.Dts.Pipeline.DataReaderSourceAdapter+EnumToStringConverter">2</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.DataReaderSourceAdapter</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DIM SUCURSAL\ADO NET Source.Connections[IDbConnection]"
+                  connectionManagerID="{832E84BA-C233-4CCB-BB40-BE2225A191E0}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[LAPTOP-L8FLUQG3.BnacoDB2.sa]"
+                  description="Managed connection manager"
+                  name="IDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DIM SUCURSAL\ADO NET Source.Outputs[ADO NET Source Output]"
+                  name="ADO NET Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DIM SUCURSAL\ADO NET Source.Outputs[ADO NET Source Output].Columns[SucursalId]"
+                      dataType="i8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DIM SUCURSAL\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[SucursalId]"
+                      lineageId="Package\DIM SUCURSAL\ADO NET Source.Outputs[ADO NET Source Output].Columns[SucursalId]"
+                      name="SucursalId"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DIM SUCURSAL\ADO NET Source.Outputs[ADO NET Source Output].Columns[Codigo]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DIM SUCURSAL\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[Codigo]"
+                      length="16"
+                      lineageId="Package\DIM SUCURSAL\ADO NET Source.Outputs[ADO NET Source Output].Columns[Codigo]"
+                      name="Codigo"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DIM SUCURSAL\ADO NET Source.Outputs[ADO NET Source Output].Columns[Nombre]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DIM SUCURSAL\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[Nombre]"
+                      length="128"
+                      lineageId="Package\DIM SUCURSAL\ADO NET Source.Outputs[ADO NET Source Output].Columns[Nombre]"
+                      name="Nombre"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DIM SUCURSAL\ADO NET Source.Outputs[ADO NET Source Output].Columns[Ciudad]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DIM SUCURSAL\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[Ciudad]"
+                      length="128"
+                      lineageId="Package\DIM SUCURSAL\ADO NET Source.Outputs[ADO NET Source Output].Columns[Ciudad]"
+                      name="Ciudad"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DIM SUCURSAL\ADO NET Source.Outputs[ADO NET Source Output].Columns[Region]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DIM SUCURSAL\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[Region]"
+                      length="128"
+                      lineageId="Package\DIM SUCURSAL\ADO NET Source.Outputs[ADO NET Source Output].Columns[Region]"
+                      name="Region"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DIM SUCURSAL\ADO NET Source.Outputs[ADO NET Source Output].Columns[Pais]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DIM SUCURSAL\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[Pais]"
+                      length="128"
+                      lineageId="Package\DIM SUCURSAL\ADO NET Source.Outputs[ADO NET Source Output].Columns[Pais]"
+                      name="Pais"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DIM SUCURSAL\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[SucursalId]"
+                      dataType="i8"
+                      name="SucursalId" />
+                    <externalMetadataColumn
+                      refId="Package\DIM SUCURSAL\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[Codigo]"
+                      dataType="wstr"
+                      length="16"
+                      name="Codigo" />
+                    <externalMetadataColumn
+                      refId="Package\DIM SUCURSAL\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[Nombre]"
+                      dataType="wstr"
+                      length="128"
+                      name="Nombre" />
+                    <externalMetadataColumn
+                      refId="Package\DIM SUCURSAL\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[Ciudad]"
+                      dataType="wstr"
+                      length="128"
+                      name="Ciudad" />
+                    <externalMetadataColumn
+                      refId="Package\DIM SUCURSAL\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[Region]"
+                      dataType="wstr"
+                      length="128"
+                      name="Region" />
+                    <externalMetadataColumn
+                      refId="Package\DIM SUCURSAL\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[Pais]"
+                      dataType="wstr"
+                      length="128"
+                      name="Pais" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DIM SUCURSAL\ADO NET Source.Outputs[ADO NET Source Error Output]"
+                  isErrorOut="true"
+                  name="ADO NET Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DIM SUCURSAL\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[SucursalId]"
+                      dataType="i8"
+                      lineageId="Package\DIM SUCURSAL\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[SucursalId]"
+                      name="SucursalId" />
+                    <outputColumn
+                      refId="Package\DIM SUCURSAL\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[Codigo]"
+                      dataType="wstr"
+                      length="16"
+                      lineageId="Package\DIM SUCURSAL\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[Codigo]"
+                      name="Codigo" />
+                    <outputColumn
+                      refId="Package\DIM SUCURSAL\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[Nombre]"
+                      dataType="wstr"
+                      length="128"
+                      lineageId="Package\DIM SUCURSAL\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[Nombre]"
+                      name="Nombre" />
+                    <outputColumn
+                      refId="Package\DIM SUCURSAL\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[Ciudad]"
+                      dataType="wstr"
+                      length="128"
+                      lineageId="Package\DIM SUCURSAL\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[Ciudad]"
+                      name="Ciudad" />
+                    <outputColumn
+                      refId="Package\DIM SUCURSAL\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[Region]"
+                      dataType="wstr"
+                      length="128"
+                      lineageId="Package\DIM SUCURSAL\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[Region]"
+                      name="Region" />
+                    <outputColumn
+                      refId="Package\DIM SUCURSAL\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[Pais]"
+                      dataType="wstr"
+                      length="128"
+                      lineageId="Package\DIM SUCURSAL\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[Pais]"
+                      name="Pais" />
+                    <outputColumn
+                      refId="Package\DIM SUCURSAL\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DIM SUCURSAL\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DIM SUCURSAL\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DIM SUCURSAL\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DIM SUCURSAL.Paths[ADO NET Source Output]"
+              endId="Package\DIM SUCURSAL\ADO NET Destination.Inputs[ADO NET Destination Input]"
+              name="ADO NET Source Output"
+              startId="Package\DIM SUCURSAL\ADO NET Source.Outputs[ADO NET Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Execute SQL Task"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{F585FBFC-AA07-40E6-91B9-6F6FB74742BE}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Execute SQL Task"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{9160CC29-D97B-4961-A1FF-1B2087CDAF23}"
+          SQLTask:SqlStatementSource="-- ================================================================&#xA;-- ETL: DIM_TIEMPO&#xA;-- ================================================================&#xA;-- 1. Limpiar datos existentes&#xA;DELETE FROM TarjetasDW.dw.DIM_TIEMPO;&#xA;&#xA;-- 2. Generar e insertar fechas&#xA;WITH FechasRecursivas AS (&#xA;    SELECT CAST('2015-01-01' AS DATE) AS Fecha&#xA;    UNION ALL&#xA;    SELECT DATEADD(DAY, 1, Fecha)&#xA;    FROM FechasRecursivas&#xA;    WHERE Fecha &lt; '2090-12-31'&#xA;)&#xA;INSERT INTO TarjetasDW.dw.DIM_TIEMPO (&#xA;    TiempoKey,&#xA;    Fecha, &#xA;    Anio, &#xA;    Mes, &#xA;    Trimestre,&#xA;    NombreMes&#xA;)&#xA;SELECT&#xA;    ROW_NUMBER() OVER (ORDER BY Fecha) AS TiempoKey,&#xA;    Fecha,&#xA;    YEAR(Fecha) AS Anio,&#xA;    MONTH(Fecha) AS Mes,&#xA;    DATEPART(QUARTER, Fecha) AS Trimestre,&#xA;    CASE MONTH(Fecha)&#xA;        WHEN 1 THEN N'Enero'&#xA;        WHEN 2 THEN N'Febrero'&#xA;        WHEN 3 THEN N'Marzo'&#xA;        WHEN 4 THEN N'Abril'&#xA;        WHEN 5 THEN N'Mayo'&#xA;        WHEN 6 THEN N'Junio'&#xA;        WHEN 7 THEN N'Julio'&#xA;        WHEN 8 THEN N'Agosto'&#xA;        WHEN 9 THEN N'Septiembre'&#xA;        WHEN 10 THEN N'Octubre'&#xA;        WHEN 11 THEN N'Noviembre'&#xA;        WHEN 12 THEN N'Diciembre'&#xA;    END AS NombreMes&#xA;FROM FechasRecursivas&#xA;OPTION (MAXRECURSION 0);&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\FACT_TARJETAS"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{5266c047-58fe-49fa-96e3-34004c0f2a85}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="FACT_TARJETAS"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\FACT_TARJETAS\ADO NET Destination"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Loads data into an ADO.NET-compliant database that uses a database table or view. Load data into a new or existing table. For example, use an ADO.NET provider for ODBC to load data into an ODBC destination.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Loads data into an ADO.NET-compliant database that uses a database table or view. Load data into a new or existing table. For example, use an ADO.NET provider for ODBC to load data into an ODBC destination."
+              name="ADO NET Destination"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="The Destination database table name."
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">"dw"."FACT_TRANSACCIONES_TARJETA"</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specify the number of rows per batch. The default is 0 which uses the same size as SSIS internal buffer. "
+                  expressionType="Notify"
+                  name="BatchSize">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out. A value of 0 indicates infinite time-out. "
+                  expressionType="Notify"
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether to use the SqlBulkCopy interface to improve the performance of bulk insert operations. Only certain providers support this interface."
+                  expressionType="Notify"
+                  name="UseBulkInsertWhenPossible">true</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.ADONETDestination</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\FACT_TARJETAS\ADO NET Destination.Connections[IDbConnection]"
+                  connectionManagerID="{365183DC-1081-460E-95B7-B2110627450E}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[LAPTOP-L8FLUQG3.TarjetasDW.sa]"
+                  description="Managed connection manager"
+                  name="IDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\FACT_TARJETAS\ADO NET Destination.Inputs[ADO NET Destination Input]"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="ADO NET Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\FACT_TARJETAS\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[AutorizacionId]"
+                      cachedDataType="i8"
+                      cachedName="AutorizacionId"
+                      externalMetadataColumnId="Package\FACT_TARJETAS\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[AutorizacionId]"
+                      lineageId="Package\FACT_TARJETAS\ADO NET Source.Outputs[ADO NET Source Output].Columns[AutorizacionId]" />
+                    <inputColumn
+                      refId="Package\FACT_TARJETAS\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[TiempoKey]"
+                      cachedDataType="i4"
+                      cachedName="TiempoKey"
+                      externalMetadataColumnId="Package\FACT_TARJETAS\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[TiempoKey]"
+                      lineageId="Package\FACT_TARJETAS\ADO NET Source.Outputs[ADO NET Source Output].Columns[TiempoKey]" />
+                    <inputColumn
+                      refId="Package\FACT_TARJETAS\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[ComercioKey]"
+                      cachedDataType="i4"
+                      cachedName="ComercioKey"
+                      externalMetadataColumnId="Package\FACT_TARJETAS\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[ComercioKey]"
+                      lineageId="Package\FACT_TARJETAS\ADO NET Source.Outputs[ADO NET Source Output].Columns[ComercioKey]" />
+                    <inputColumn
+                      refId="Package\FACT_TARJETAS\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[ClienteKey]"
+                      cachedDataType="i4"
+                      cachedName="ClienteKey"
+                      externalMetadataColumnId="Package\FACT_TARJETAS\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[ClienteKey]"
+                      lineageId="Package\FACT_TARJETAS\ADO NET Source.Outputs[ADO NET Source Output].Columns[ClienteKey]" />
+                    <inputColumn
+                      refId="Package\FACT_TARJETAS\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[ProductoKey]"
+                      cachedDataType="i4"
+                      cachedName="ProductoKey"
+                      externalMetadataColumnId="Package\FACT_TARJETAS\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[ProductoKey]"
+                      lineageId="Package\FACT_TARJETAS\ADO NET Source.Outputs[ADO NET Source Output].Columns[ProductoKey]" />
+                    <inputColumn
+                      refId="Package\FACT_TARJETAS\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[SucursalKey]"
+                      cachedDataType="i4"
+                      cachedName="SucursalKey"
+                      externalMetadataColumnId="Package\FACT_TARJETAS\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[SucursalKey]"
+                      lineageId="Package\FACT_TARJETAS\ADO NET Source.Outputs[ADO NET Source Output].Columns[SucursalKey]" />
+                    <inputColumn
+                      refId="Package\FACT_TARJETAS\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[EstadoKey]"
+                      cachedDataType="i4"
+                      cachedName="EstadoKey"
+                      externalMetadataColumnId="Package\FACT_TARJETAS\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[EstadoKey]"
+                      lineageId="Package\FACT_TARJETAS\ADO NET Source.Outputs[ADO NET Source Output].Columns[EstadoKey]" />
+                    <inputColumn
+                      refId="Package\FACT_TARJETAS\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[MontoAutorizado]"
+                      cachedDataType="numeric"
+                      cachedName="MontoAutorizado"
+                      cachedPrecision="19"
+                      cachedScale="4"
+                      externalMetadataColumnId="Package\FACT_TARJETAS\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[MontoAutorizado]"
+                      lineageId="Package\FACT_TARJETAS\ADO NET Source.Outputs[ADO NET Source Output].Columns[MontoAutorizado]" />
+                    <inputColumn
+                      refId="Package\FACT_TARJETAS\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[MontoCapturado]"
+                      cachedDataType="numeric"
+                      cachedName="MontoCapturado"
+                      cachedPrecision="19"
+                      cachedScale="4"
+                      externalMetadataColumnId="Package\FACT_TARJETAS\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[MontoCapturado]"
+                      lineageId="Package\FACT_TARJETAS\ADO NET Source.Outputs[ADO NET Source Output].Columns[MontoCapturado]" />
+                    <inputColumn
+                      refId="Package\FACT_TARJETAS\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[CantidadTransacciones]"
+                      cachedDataType="i4"
+                      cachedName="CantidadTransacciones"
+                      externalMetadataColumnId="Package\FACT_TARJETAS\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[CantidadTransacciones]"
+                      lineageId="Package\FACT_TARJETAS\ADO NET Source.Outputs[ADO NET Source Output].Columns[CantidadTransacciones]" />
+                    <inputColumn
+                      refId="Package\FACT_TARJETAS\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[TieneDisputa]"
+                      cachedDataType="i4"
+                      cachedName="TieneDisputa"
+                      externalMetadataColumnId="Package\FACT_TARJETAS\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[TieneDisputa]"
+                      lineageId="Package\FACT_TARJETAS\ADO NET Source.Outputs[ADO NET Source Output].Columns[TieneDisputa]" />
+                    <inputColumn
+                      refId="Package\FACT_TARJETAS\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[TransaccionExitosa]"
+                      cachedDataType="i4"
+                      cachedName="TransaccionExitosa"
+                      externalMetadataColumnId="Package\FACT_TARJETAS\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[TransaccionExitosa]"
+                      lineageId="Package\FACT_TARJETAS\ADO NET Source.Outputs[ADO NET Source Output].Columns[TransaccionExitosa]" />
+                    <inputColumn
+                      refId="Package\FACT_TARJETAS\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[FechaHoraAutorizacion]"
+                      cachedDataType="dbTimeStamp2"
+                      cachedName="FechaHoraAutorizacion"
+                      cachedScale="3"
+                      externalMetadataColumnId="Package\FACT_TARJETAS\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[FechaHoraAutorizacion]"
+                      lineageId="Package\FACT_TARJETAS\ADO NET Source.Outputs[ADO NET Source Output].Columns[FechaHoraAutorizacion]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\FACT_TARJETAS\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[FactId]"
+                      dataType="i8"
+                      name="FactId" />
+                    <externalMetadataColumn
+                      refId="Package\FACT_TARJETAS\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[AutorizacionId]"
+                      dataType="i8"
+                      name="AutorizacionId" />
+                    <externalMetadataColumn
+                      refId="Package\FACT_TARJETAS\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[TiempoKey]"
+                      dataType="i4"
+                      name="TiempoKey" />
+                    <externalMetadataColumn
+                      refId="Package\FACT_TARJETAS\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[ComercioKey]"
+                      dataType="i4"
+                      name="ComercioKey" />
+                    <externalMetadataColumn
+                      refId="Package\FACT_TARJETAS\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[ClienteKey]"
+                      dataType="i4"
+                      name="ClienteKey" />
+                    <externalMetadataColumn
+                      refId="Package\FACT_TARJETAS\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[ProductoKey]"
+                      dataType="i4"
+                      name="ProductoKey" />
+                    <externalMetadataColumn
+                      refId="Package\FACT_TARJETAS\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[SucursalKey]"
+                      dataType="i4"
+                      name="SucursalKey" />
+                    <externalMetadataColumn
+                      refId="Package\FACT_TARJETAS\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[EstadoKey]"
+                      dataType="ui1"
+                      name="EstadoKey" />
+                    <externalMetadataColumn
+                      refId="Package\FACT_TARJETAS\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[MontoAutorizado]"
+                      dataType="numeric"
+                      name="MontoAutorizado"
+                      precision="19"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\FACT_TARJETAS\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[MontoCapturado]"
+                      dataType="numeric"
+                      name="MontoCapturado"
+                      precision="19"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\FACT_TARJETAS\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[CantidadTransacciones]"
+                      dataType="i4"
+                      name="CantidadTransacciones" />
+                    <externalMetadataColumn
+                      refId="Package\FACT_TARJETAS\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[TieneDisputa]"
+                      dataType="bool"
+                      name="TieneDisputa" />
+                    <externalMetadataColumn
+                      refId="Package\FACT_TARJETAS\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[TransaccionExitosa]"
+                      dataType="bool"
+                      name="TransaccionExitosa" />
+                    <externalMetadataColumn
+                      refId="Package\FACT_TARJETAS\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[FechaHoraAutorizacion]"
+                      dataType="dbTimeStamp"
+                      name="FechaHoraAutorizacion" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\FACT_TARJETAS\ADO NET Destination.Outputs[ADO NET Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="ADO NET Destination Error Output"
+                  synchronousInputId="Package\FACT_TARJETAS\ADO NET Destination.Inputs[ADO NET Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\FACT_TARJETAS\ADO NET Destination.Outputs[ADO NET Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\FACT_TARJETAS\ADO NET Destination.Outputs[ADO NET Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\FACT_TARJETAS\ADO NET Destination.Outputs[ADO NET Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\FACT_TARJETAS\ADO NET Destination.Outputs[ADO NET Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\FACT_TARJETAS\ADO NET Source"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Consumes data from SQL Server, OLE DB, ODBC, or Oracle, using the corresponding .NET Framework data provider. Use a Transact-SQL statement to define the result set. For example, extract data from SQL Server with the .NET Framework data provider for SQL Server.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="Consumes data from SQL Server, OLE DB, ODBC, or Oracle, using the corresponding .NET Framework data provider. Use a Transact-SQL statement to define the result set. For example, extract data from SQL Server with the .NET Framework data provider for SQL Server."
+              name="ADO NET Source"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement used by the component to extract data."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">-- ================================================================
+-- ETL: FACT_TRANSACCIONES_TARJETA (CORREGIDO - SIN DUPLICADOS)
+-- ================================================================
+SELECT 
+    a.AutorizacionId,
+    
+    -- ========== DIMENSIONES ==========
+    dt.TiempoKey,
+    dcom.ComercioKey,
+    dcli.ClienteKey,
+    dp.ProductoKey,
+    ds.SucursalKey,
+    CASE 
+        WHEN cap.Estado = 1 AND cap.MontoCapturado &gt; 0 THEN 1  -- CAPTURADA_EXITOSA
+        ELSE 2  -- CAPTURA_RECHAZADA
+    END AS EstadoKey,
+    
+    -- ========== MÉTRICAS ==========
+    a.Monto AS MontoAutorizado,
+    ISNULL(cap.MontoCapturado, 0) AS MontoCapturado,
+    1 AS CantidadTransacciones,
+    0 AS TieneDisputa,
+    CASE WHEN cap.Estado = 1 AND cap.MontoCapturado &gt; 0 THEN 1 ELSE 0 END AS TransaccionExitosa,
+    
+    -- ========== CONTROL ==========
+    a.AutorizadoEn AS FechaHoraAutorizacion
+
+FROM BnacoDB2.tarjetas.Autorizacion a
+LEFT JOIN BnacoDB2.tarjetas.Captura cap ON cap.AutorizacionId = a.AutorizacionId
+INNER JOIN BnacoDB2.tarjetas.Tarjeta t ON t.TarjetaId = a.TarjetaId
+
+-- ✅ Solo la PRIMERA cuenta vinculada a la tarjeta (evita duplicados por múltiples cuentas)
+INNER JOIN (
+    SELECT TarjetaId, CuentaId,
+           ROW_NUMBER() OVER (PARTITION BY TarjetaId ORDER BY TarjetaCuentaLinkId) AS rn
+    FROM BnacoDB2.tarjetas.TarjetaCuentaLink
+) tcl ON tcl.TarjetaId = t.TarjetaId AND tcl.rn = 1
+
+INNER JOIN BnacoDB2.nucleo.Cuenta c ON c.CuentaId = tcl.CuentaId
+
+-- ✅ Solo el PRIMER titular de la cuenta (evita duplicados por múltiples titulares)
+INNER JOIN (
+    SELECT CuentaId, ClienteId,
+           ROW_NUMBER() OVER (PARTITION BY CuentaId ORDER BY CuentaTitularId) AS rn
+    FROM BnacoDB2.nucleo.TitularCuenta
+) tc ON tc.CuentaId = c.CuentaId AND tc.rn = 1
+
+INNER JOIN BnacoDB2.nucleo.Cliente cl ON cl.ClienteId = tc.ClienteId
+INNER JOIN TarjetasDW.dw.DIM_TIEMPO dt ON dt.Fecha = CAST(a.AutorizadoEn AS DATE)
+INNER JOIN TarjetasDW.dw.DIM_COMERCIO dcom ON dcom.ComercioId = a.ComercioId
+INNER JOIN TarjetasDW.dw.DIM_CLIENTE dcli ON dcli.ClienteId = tc.ClienteId
+INNER JOIN TarjetasDW.dw.DIM_PRODUCTO dp ON dp.ProductoId = c.ProductoId
+LEFT JOIN TarjetasDW.dw.DIM_SUCURSAL ds ON ds.SucursalId = cl.SucursalPrincipalId
+
+-- ========== FILTRO ANTI-DUPLICADOS EN EJECUCIONES REPETIDAS ==========
+WHERE NOT EXISTS (
+    SELECT 1 
+    FROM TarjetasDW.dw.FACT_TRANSACCIONES_TARJETA ft
+    WHERE ft.AutorizacionId = a.AutorizacionId
+);</property>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether to allow non-string external columns to be implicitly converted to strings at the output columns."
+                  name="AllowImplicitStringConversion">true</property>
+                <property
+                  dataType="System.String"
+                  description="The Source database table name."
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specify the mode to retrieve external column information"
+                  name="AccessMode"
+                  typeConverter="Microsoft.SqlServer.Dts.Pipeline.DataReaderSourceAdapter+EnumToStringConverter">2</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.DataReaderSourceAdapter</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\FACT_TARJETAS\ADO NET Source.Connections[IDbConnection]"
+                  connectionManagerID="{832E84BA-C233-4CCB-BB40-BE2225A191E0}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[LAPTOP-L8FLUQG3.BnacoDB2.sa]"
+                  description="Managed connection manager"
+                  name="IDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\FACT_TARJETAS\ADO NET Source.Outputs[ADO NET Source Output]"
+                  name="ADO NET Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\FACT_TARJETAS\ADO NET Source.Outputs[ADO NET Source Output].Columns[AutorizacionId]"
+                      dataType="i8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\FACT_TARJETAS\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[AutorizacionId]"
+                      lineageId="Package\FACT_TARJETAS\ADO NET Source.Outputs[ADO NET Source Output].Columns[AutorizacionId]"
+                      name="AutorizacionId"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\FACT_TARJETAS\ADO NET Source.Outputs[ADO NET Source Output].Columns[TiempoKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\FACT_TARJETAS\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[TiempoKey]"
+                      lineageId="Package\FACT_TARJETAS\ADO NET Source.Outputs[ADO NET Source Output].Columns[TiempoKey]"
+                      name="TiempoKey"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\FACT_TARJETAS\ADO NET Source.Outputs[ADO NET Source Output].Columns[ComercioKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\FACT_TARJETAS\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[ComercioKey]"
+                      lineageId="Package\FACT_TARJETAS\ADO NET Source.Outputs[ADO NET Source Output].Columns[ComercioKey]"
+                      name="ComercioKey"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\FACT_TARJETAS\ADO NET Source.Outputs[ADO NET Source Output].Columns[ClienteKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\FACT_TARJETAS\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[ClienteKey]"
+                      lineageId="Package\FACT_TARJETAS\ADO NET Source.Outputs[ADO NET Source Output].Columns[ClienteKey]"
+                      name="ClienteKey"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\FACT_TARJETAS\ADO NET Source.Outputs[ADO NET Source Output].Columns[ProductoKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\FACT_TARJETAS\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[ProductoKey]"
+                      lineageId="Package\FACT_TARJETAS\ADO NET Source.Outputs[ADO NET Source Output].Columns[ProductoKey]"
+                      name="ProductoKey"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\FACT_TARJETAS\ADO NET Source.Outputs[ADO NET Source Output].Columns[SucursalKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\FACT_TARJETAS\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[SucursalKey]"
+                      lineageId="Package\FACT_TARJETAS\ADO NET Source.Outputs[ADO NET Source Output].Columns[SucursalKey]"
+                      name="SucursalKey"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\FACT_TARJETAS\ADO NET Source.Outputs[ADO NET Source Output].Columns[EstadoKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\FACT_TARJETAS\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[EstadoKey]"
+                      lineageId="Package\FACT_TARJETAS\ADO NET Source.Outputs[ADO NET Source Output].Columns[EstadoKey]"
+                      name="EstadoKey"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\FACT_TARJETAS\ADO NET Source.Outputs[ADO NET Source Output].Columns[MontoAutorizado]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\FACT_TARJETAS\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[MontoAutorizado]"
+                      lineageId="Package\FACT_TARJETAS\ADO NET Source.Outputs[ADO NET Source Output].Columns[MontoAutorizado]"
+                      name="MontoAutorizado"
+                      precision="19"
+                      scale="4"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\FACT_TARJETAS\ADO NET Source.Outputs[ADO NET Source Output].Columns[MontoCapturado]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\FACT_TARJETAS\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[MontoCapturado]"
+                      lineageId="Package\FACT_TARJETAS\ADO NET Source.Outputs[ADO NET Source Output].Columns[MontoCapturado]"
+                      name="MontoCapturado"
+                      precision="19"
+                      scale="4"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\FACT_TARJETAS\ADO NET Source.Outputs[ADO NET Source Output].Columns[CantidadTransacciones]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\FACT_TARJETAS\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[CantidadTransacciones]"
+                      lineageId="Package\FACT_TARJETAS\ADO NET Source.Outputs[ADO NET Source Output].Columns[CantidadTransacciones]"
+                      name="CantidadTransacciones"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\FACT_TARJETAS\ADO NET Source.Outputs[ADO NET Source Output].Columns[TieneDisputa]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\FACT_TARJETAS\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[TieneDisputa]"
+                      lineageId="Package\FACT_TARJETAS\ADO NET Source.Outputs[ADO NET Source Output].Columns[TieneDisputa]"
+                      name="TieneDisputa"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\FACT_TARJETAS\ADO NET Source.Outputs[ADO NET Source Output].Columns[TransaccionExitosa]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\FACT_TARJETAS\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[TransaccionExitosa]"
+                      lineageId="Package\FACT_TARJETAS\ADO NET Source.Outputs[ADO NET Source Output].Columns[TransaccionExitosa]"
+                      name="TransaccionExitosa"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\FACT_TARJETAS\ADO NET Source.Outputs[ADO NET Source Output].Columns[FechaHoraAutorizacion]"
+                      dataType="dbTimeStamp2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\FACT_TARJETAS\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[FechaHoraAutorizacion]"
+                      lineageId="Package\FACT_TARJETAS\ADO NET Source.Outputs[ADO NET Source Output].Columns[FechaHoraAutorizacion]"
+                      name="FechaHoraAutorizacion"
+                      scale="3"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\FACT_TARJETAS\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[AutorizacionId]"
+                      dataType="i8"
+                      name="AutorizacionId" />
+                    <externalMetadataColumn
+                      refId="Package\FACT_TARJETAS\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[TiempoKey]"
+                      dataType="i4"
+                      name="TiempoKey" />
+                    <externalMetadataColumn
+                      refId="Package\FACT_TARJETAS\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[ComercioKey]"
+                      dataType="i4"
+                      name="ComercioKey" />
+                    <externalMetadataColumn
+                      refId="Package\FACT_TARJETAS\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[ClienteKey]"
+                      dataType="i4"
+                      name="ClienteKey" />
+                    <externalMetadataColumn
+                      refId="Package\FACT_TARJETAS\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[ProductoKey]"
+                      dataType="i4"
+                      name="ProductoKey" />
+                    <externalMetadataColumn
+                      refId="Package\FACT_TARJETAS\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[SucursalKey]"
+                      dataType="i4"
+                      name="SucursalKey" />
+                    <externalMetadataColumn
+                      refId="Package\FACT_TARJETAS\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[EstadoKey]"
+                      dataType="i4"
+                      name="EstadoKey" />
+                    <externalMetadataColumn
+                      refId="Package\FACT_TARJETAS\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[MontoAutorizado]"
+                      dataType="numeric"
+                      name="MontoAutorizado"
+                      precision="19"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\FACT_TARJETAS\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[MontoCapturado]"
+                      dataType="numeric"
+                      name="MontoCapturado"
+                      precision="19"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\FACT_TARJETAS\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[CantidadTransacciones]"
+                      dataType="i4"
+                      name="CantidadTransacciones" />
+                    <externalMetadataColumn
+                      refId="Package\FACT_TARJETAS\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[TieneDisputa]"
+                      dataType="i4"
+                      name="TieneDisputa" />
+                    <externalMetadataColumn
+                      refId="Package\FACT_TARJETAS\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[TransaccionExitosa]"
+                      dataType="i4"
+                      name="TransaccionExitosa" />
+                    <externalMetadataColumn
+                      refId="Package\FACT_TARJETAS\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[FechaHoraAutorizacion]"
+                      dataType="dbTimeStamp2"
+                      name="FechaHoraAutorizacion"
+                      scale="3" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\FACT_TARJETAS\ADO NET Source.Outputs[ADO NET Source Error Output]"
+                  isErrorOut="true"
+                  name="ADO NET Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\FACT_TARJETAS\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[AutorizacionId]"
+                      dataType="i8"
+                      lineageId="Package\FACT_TARJETAS\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[AutorizacionId]"
+                      name="AutorizacionId" />
+                    <outputColumn
+                      refId="Package\FACT_TARJETAS\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[TiempoKey]"
+                      dataType="i4"
+                      lineageId="Package\FACT_TARJETAS\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[TiempoKey]"
+                      name="TiempoKey" />
+                    <outputColumn
+                      refId="Package\FACT_TARJETAS\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[ComercioKey]"
+                      dataType="i4"
+                      lineageId="Package\FACT_TARJETAS\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[ComercioKey]"
+                      name="ComercioKey" />
+                    <outputColumn
+                      refId="Package\FACT_TARJETAS\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[ClienteKey]"
+                      dataType="i4"
+                      lineageId="Package\FACT_TARJETAS\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[ClienteKey]"
+                      name="ClienteKey" />
+                    <outputColumn
+                      refId="Package\FACT_TARJETAS\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[ProductoKey]"
+                      dataType="i4"
+                      lineageId="Package\FACT_TARJETAS\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[ProductoKey]"
+                      name="ProductoKey" />
+                    <outputColumn
+                      refId="Package\FACT_TARJETAS\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[SucursalKey]"
+                      dataType="i4"
+                      lineageId="Package\FACT_TARJETAS\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[SucursalKey]"
+                      name="SucursalKey" />
+                    <outputColumn
+                      refId="Package\FACT_TARJETAS\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[EstadoKey]"
+                      dataType="i4"
+                      lineageId="Package\FACT_TARJETAS\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[EstadoKey]"
+                      name="EstadoKey" />
+                    <outputColumn
+                      refId="Package\FACT_TARJETAS\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[MontoAutorizado]"
+                      dataType="numeric"
+                      lineageId="Package\FACT_TARJETAS\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[MontoAutorizado]"
+                      name="MontoAutorizado"
+                      precision="19"
+                      scale="4" />
+                    <outputColumn
+                      refId="Package\FACT_TARJETAS\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[MontoCapturado]"
+                      dataType="numeric"
+                      lineageId="Package\FACT_TARJETAS\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[MontoCapturado]"
+                      name="MontoCapturado"
+                      precision="19"
+                      scale="4" />
+                    <outputColumn
+                      refId="Package\FACT_TARJETAS\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[CantidadTransacciones]"
+                      dataType="i4"
+                      lineageId="Package\FACT_TARJETAS\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[CantidadTransacciones]"
+                      name="CantidadTransacciones" />
+                    <outputColumn
+                      refId="Package\FACT_TARJETAS\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[TieneDisputa]"
+                      dataType="i4"
+                      lineageId="Package\FACT_TARJETAS\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[TieneDisputa]"
+                      name="TieneDisputa" />
+                    <outputColumn
+                      refId="Package\FACT_TARJETAS\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[TransaccionExitosa]"
+                      dataType="i4"
+                      lineageId="Package\FACT_TARJETAS\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[TransaccionExitosa]"
+                      name="TransaccionExitosa" />
+                    <outputColumn
+                      refId="Package\FACT_TARJETAS\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[FechaHoraAutorizacion]"
+                      dataType="dbTimeStamp2"
+                      lineageId="Package\FACT_TARJETAS\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[FechaHoraAutorizacion]"
+                      name="FechaHoraAutorizacion"
+                      scale="3" />
+                    <outputColumn
+                      refId="Package\FACT_TARJETAS\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\FACT_TARJETAS\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\FACT_TARJETAS\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\FACT_TARJETAS\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\FACT_TARJETAS.Paths[ADO NET Source Output]"
+              endId="Package\FACT_TARJETAS\ADO NET Destination.Inputs[ADO NET Destination Input]"
+              name="ADO NET Source Output"
+              startId="Package\FACT_TARJETAS\ADO NET Source.Outputs[ADO NET Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{326D1927-3679-461C-A832-01DD760B0C4C}"
+      DTS:From="Package\Execute SQL Task"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\DIM CLIENTE" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{6F9CD954-CF2A-44B1-9043-A2A60BA716E0}"
+      DTS:From="Package\DIM CLIENTE"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\DIM COMERCIO" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{81062725-AAA2-4DDF-89EC-4F4497963579}"
+      DTS:From="Package\DIM COMERCIO"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\DIM PRODUCTO" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{25598887-0CD6-45DC-8A47-5829576BFA7E}"
+      DTS:From="Package\DIM PRODUCTO"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 3"
+      DTS:To="Package\DIM SUCURSAL" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
+      DTS:CreationName=""
+      DTS:DTSID="{120412E6-2CA0-4552-A61B-9B59F4454A20}"
+      DTS:From="Package\DIM SUCURSAL"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 4"
+      DTS:To="Package\FACT_TARJETAS" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="143,42"
+          Id="Package\DIM CLIENTE"
+          TopLeft="152,150" />
+        <NodeLayout
+          Size="154,42"
+          Id="Package\DIM COMERCIO"
+          TopLeft="149,257" />
+        <NodeLayout
+          Size="156,42"
+          Id="Package\DIM PRODUCTO"
+          TopLeft="149,359" />
+        <NodeLayout
+          Size="152,42"
+          Id="Package\DIM SUCURSAL"
+          TopLeft="149,461" />
+        <NodeLayout
+          Size="163,42"
+          Id="Package\Execute SQL Task"
+          TopLeft="149,35" />
+        <NodeLayout
+          Size="158,42"
+          Id="Package\FACT_TARJETAS"
+          TopLeft="149,563" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="227,77">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,73"
+              Start="0,0"
+              End="0,65.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,65.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="224.75,192">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,65"
+              Start="0,0"
+              End="0,57.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,57.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="226.5,299">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="226,401">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 4]"
+          TopLeft="226.5,503">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\DIM CLIENTE">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="158,42"
+          Id="Package\DIM CLIENTE\ADO NET Source"
+          TopLeft="369,208" />
+        <NodeLayout
+          Size="179,42"
+          Id="Package\DIM CLIENTE\ADO NET Destination"
+          TopLeft="658,197" />
+        <EdgeLayout
+          Id="Package\DIM CLIENTE.Paths[ADO NET Source Output]"
+          TopLeft="527,229">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="131,-11"
+              Start="0,0"
+              End="123.5,-11">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="61.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="61.5,0"
+                    Point2="65.5,0"
+                    Point3="65.5,-4" />
+                  <mssgle:LineSegment
+                    End="65.5,-7" />
+                  <mssgle:CubicBezierSegment
+                    Point1="65.5,-7"
+                    Point2="65.5,-11"
+                    Point3="69.5,-11" />
+                  <mssgle:LineSegment
+                    End="123.5,-11" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DIM CLIENTE\ADO NET Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DIM CLIENTE\ADO NET Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\DIM COMERCIO">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="154,42"
+          Id="Package\DIM COMERCIO\DIM COMERCIO"
+          TopLeft="60,71" />
+        <NodeLayout
+          Size="179,42"
+          Id="Package\DIM COMERCIO\ADO NET Destination"
+          TopLeft="338,96" />
+        <EdgeLayout
+          Id="Package\DIM COMERCIO.Paths[ADO NET Source Output]"
+          TopLeft="214,92">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="124,25"
+              Start="0,0"
+              End="116.5,25">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="58,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="58,0"
+                    Point2="62,0"
+                    Point3="62,4" />
+                  <mssgle:LineSegment
+                    End="62,21" />
+                  <mssgle:CubicBezierSegment
+                    Point1="62,21"
+                    Point2="62,25"
+                    Point3="66,25" />
+                  <mssgle:LineSegment
+                    End="116.5,25" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DIM COMERCIO\ADO NET Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DIM COMERCIO\DIM COMERCIO">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\DIM PRODUCTO">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="158,42"
+          Id="Package\DIM PRODUCTO\ADO NET Source"
+          TopLeft="60,71" />
+        <NodeLayout
+          Size="179,42"
+          Id="Package\DIM PRODUCTO\ADO NET Destination"
+          TopLeft="349,60" />
+        <EdgeLayout
+          Id="Package\DIM PRODUCTO.Paths[ADO NET Source Output]"
+          TopLeft="218,92">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="131,-11"
+              Start="0,0"
+              End="123.5,-11">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="61.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="61.5,0"
+                    Point2="65.5,0"
+                    Point3="65.5,-4" />
+                  <mssgle:LineSegment
+                    End="65.5,-7" />
+                  <mssgle:CubicBezierSegment
+                    Point1="65.5,-7"
+                    Point2="65.5,-11"
+                    Point3="69.5,-11" />
+                  <mssgle:LineSegment
+                    End="123.5,-11" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DIM PRODUCTO\ADO NET Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DIM PRODUCTO\ADO NET Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\DIM SUCURSAL">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="158,42"
+          Id="Package\DIM SUCURSAL\ADO NET Source"
+          TopLeft="192,178" />
+        <NodeLayout
+          Size="179,42"
+          Id="Package\DIM SUCURSAL\ADO NET Destination"
+          TopLeft="600,176" />
+        <EdgeLayout
+          Id="Package\DIM SUCURSAL.Paths[ADO NET Source Output]"
+          TopLeft="350,198">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="250,0"
+              Start="0,0"
+              End="242.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="242.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DIM SUCURSAL\ADO NET Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DIM SUCURSAL\ADO NET Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\FACT_TARJETAS">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="158,42"
+          Id="Package\FACT_TARJETAS\ADO NET Source"
+          TopLeft="60,71" />
+        <NodeLayout
+          Size="179,42"
+          Id="Package\FACT_TARJETAS\ADO NET Destination"
+          TopLeft="349,60" />
+        <EdgeLayout
+          Id="Package\FACT_TARJETAS.Paths[ADO NET Source Output]"
+          TopLeft="218,92">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="131,-11"
+              Start="0,0"
+              End="123.5,-11">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="61.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="61.5,0"
+                    Point2="65.5,0"
+                    Point3="65.5,-4" />
+                  <mssgle:LineSegment
+                    End="65.5,-7" />
+                  <mssgle:CubicBezierSegment
+                    Point1="65.5,-7"
+                    Point2="65.5,-11"
+                    Point3="69.5,-11" />
+                  <mssgle:LineSegment
+                    End="123.5,-11" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\FACT_TARJETAS\ADO NET Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\FACT_TARJETAS\ADO NET Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

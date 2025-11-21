@@ -1,0 +1,282 @@
+﻿<DataSourceView xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="cc5af170-9221-470c-a4c5-96329f6c8911" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Tarjetas DW</ID>
+  <Name>Tarjetas DW</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:CurrentLayout</Name>
+      <Value>_ALL_TABLES_</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:NameMatchingCriteria</Name>
+      <Value>1</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:SchemaRestriction</Name>
+      <Value></Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:RetrieveRelationships</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:Layouts</Name>
+      <Value>
+        <Layouts xmlns="">
+          <Diagram>
+            <Name>_ALL_TABLES_</Name>
+            <DiagramLayout />
+            <ShowRelationshipNames>False</ShowRelationshipNames>
+            <UseDiagramDefaultLayout>True</UseDiagramDefaultLayout>
+            <DiagramViewPortLeft>0</DiagramViewPortLeft>
+            <DiagramViewPortTop>0</DiagramViewPortTop>
+            <DiagramBoundingLeft>0</DiagramBoundingLeft>
+            <DiagramBoundingTop>0</DiagramBoundingTop>
+            <DiagramZoom>100</DiagramZoom>
+          </Diagram>
+        </Layouts>
+      </Value>
+    </Annotation>
+  </Annotations>
+  <DataSourceID>Tarjetas DW</DataSourceID>
+  <Schema>
+    <xs:schema id="Tarjetas_x0020_DW" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop">
+      <xs:element name="Tarjetas_x0020_DW" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:design-time-name="15a6559b-388f-4459-b66b-082db636d87e">
+        <xs:complexType>
+          <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="dw_DIM_TIEMPO" msprop:DbTableName="DIM_TIEMPO" msprop:FriendlyName="DIM_TIEMPO" msprop:TableType="Table" msprop:DbSchemaName="dw" msprop:design-time-name="86986c8b-95ff-4586-960d-8c86159263c0">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="TiempoKey" msprop:FriendlyName="TiempoKey" msprop:DbColumnName="TiempoKey" msprop:design-time-name="761746d5-f2c4-4ae0-993c-cc487fa50714" type="xs:int" />
+                  <xs:element name="Fecha" msprop:FriendlyName="Fecha" msprop:DbColumnName="Fecha" msprop:design-time-name="1bc453c5-588e-45d0-8c6c-cdf1e5df6705" type="xs:dateTime" />
+                  <xs:element name="Anio" msprop:FriendlyName="Anio" msprop:DbColumnName="Anio" msprop:design-time-name="12d11c77-2f4f-4679-bc4b-16682f1b7b91" type="xs:int" />
+                  <xs:element name="Trimestre" msprop:FriendlyName="Trimestre" msprop:DbColumnName="Trimestre" msprop:design-time-name="5315c3e6-d383-4674-8b6b-b6d0073de82c" type="xs:int" />
+                  <xs:element name="Mes" msprop:FriendlyName="Mes" msprop:DbColumnName="Mes" msprop:design-time-name="9cd5bd0f-3893-4c53-9f9f-03dbe28806ff" type="xs:int" />
+                  <xs:element name="NombreMes" msprop:FriendlyName="NombreMes" msprop:DbColumnName="NombreMes" msprop:design-time-name="ca5bb4ad-82c2-4bab-a700-d67c3fe106b2">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="20" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dw_DIM_CLIENTE" msprop:DbTableName="DIM_CLIENTE" msprop:FriendlyName="DIM_CLIENTE" msprop:TableType="Table" msprop:DbSchemaName="dw" msprop:design-time-name="09114266-a9bf-4a92-9060-ba803253db41">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="ClienteKey" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:FriendlyName="ClienteKey" msprop:DbColumnName="ClienteKey" msprop:design-time-name="138c34b3-7405-44cd-918b-bf339d8aa8d3" type="xs:int" />
+                  <xs:element name="ClienteId" msprop:FriendlyName="ClienteId" msprop:DbColumnName="ClienteId" msprop:design-time-name="0ca63994-b86d-418c-91a6-6b10f6950777" type="xs:long" />
+                  <xs:element name="NombreCompleto" msprop:FriendlyName="NombreCompleto" msprop:DbColumnName="NombreCompleto" msprop:design-time-name="3b2d166f-65e1-4124-8bd5-4d5ca4d32d7b" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="200" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="TipoCliente" msprop:FriendlyName="TipoCliente" msprop:DbColumnName="TipoCliente" msprop:design-time-name="cba8c08b-a8f6-47b6-9f7c-98190bc53e31" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="20" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="PersonaId" msprop:FriendlyName="PersonaId" msprop:DbColumnName="PersonaId" msprop:design-time-name="1bbabc9d-00b0-4760-add6-ceb310c0a1d1" type="xs:long" minOccurs="0" />
+                  <xs:element name="OrganizacionId" msprop:FriendlyName="OrganizacionId" msprop:DbColumnName="OrganizacionId" msprop:design-time-name="886156ea-f168-4260-b840-2f3d420225b9" type="xs:long" minOccurs="0" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dw_DIM_COMERCIO" msprop:DbTableName="DIM_COMERCIO" msprop:FriendlyName="DIM_COMERCIO" msprop:TableType="Table" msprop:DbSchemaName="dw" msprop:design-time-name="0f8ab0f0-0fe4-4e7c-b122-91683768400d">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="ComercioKey" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:FriendlyName="ComercioKey" msprop:DbColumnName="ComercioKey" msprop:design-time-name="4ee0ad44-a749-4218-98f8-bae4e4fd85e9" type="xs:int" />
+                  <xs:element name="ComercioId" msprop:FriendlyName="ComercioId" msprop:DbColumnName="ComercioId" msprop:design-time-name="92bcd549-6e1d-4a17-bd84-18d60e7c8ba1" type="xs:long" />
+                  <xs:element name="NombreComercio" msprop:FriendlyName="NombreComercio" msprop:DbColumnName="NombreComercio" msprop:design-time-name="1ada7291-89f2-4612-a851-50cdb0147188" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="200" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="PaisNombre" msprop:FriendlyName="PaisNombre" msprop:DbColumnName="PaisNombre" msprop:design-time-name="d9ab5c1a-eebf-48af-ab78-1da812c9c601" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="100" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dw_DIM_PRODUCTO" msprop:DbTableName="DIM_PRODUCTO" msprop:FriendlyName="DIM_PRODUCTO" msprop:TableType="Table" msprop:DbSchemaName="dw" msprop:design-time-name="e7e06907-4537-4155-8cb2-dc585812be8a">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="ProductoKey" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:FriendlyName="ProductoKey" msprop:DbColumnName="ProductoKey" msprop:design-time-name="15238481-f297-47ed-bc6c-b424ef249a46" type="xs:int" />
+                  <xs:element name="ProductoId" msprop:FriendlyName="ProductoId" msprop:DbColumnName="ProductoId" msprop:design-time-name="5890aeab-422d-49a5-bc46-76a194d8b06f" type="xs:long" />
+                  <xs:element name="Codigo" msprop:FriendlyName="Codigo" msprop:DbColumnName="Codigo" msprop:design-time-name="bc3997bd-628c-4a28-8f9d-b3916895fd32" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Nombre" msprop:FriendlyName="Nombre" msprop:DbColumnName="Nombre" msprop:design-time-name="acbee536-edea-4314-bc65-17f5c8d02ddb" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="200" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Categoria" msprop:FriendlyName="Categoria" msprop:DbColumnName="Categoria" msprop:design-time-name="89bfd79e-5f34-4d2a-b3d9-e631c9c15159" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="NombreMoneda" msprop:FriendlyName="NombreMoneda" msprop:DbColumnName="NombreMoneda" msprop:design-time-name="449cce12-7ed9-40d6-ba40-57d8fa58d9b1" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dw_DIM_SUCURSAL" msprop:DbTableName="DIM_SUCURSAL" msprop:FriendlyName="DIM_SUCURSAL" msprop:TableType="Table" msprop:DbSchemaName="dw" msprop:design-time-name="a809cbd0-a555-4d5a-bab4-732854ae1f4d">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="SucursalKey" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:FriendlyName="SucursalKey" msprop:DbColumnName="SucursalKey" msprop:design-time-name="50e0d3ff-ce07-458a-8925-1909f106b6d4" type="xs:int" />
+                  <xs:element name="SucursalId" msprop:FriendlyName="SucursalId" msprop:DbColumnName="SucursalId" msprop:design-time-name="bfcb5582-ea18-4058-abba-9fd8677435b9" type="xs:int" />
+                  <xs:element name="Codigo" msprop:FriendlyName="Codigo" msprop:DbColumnName="Codigo" msprop:design-time-name="bc530504-9420-41ae-81b8-327335b80ebc" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Nombre" msprop:FriendlyName="Nombre" msprop:DbColumnName="Nombre" msprop:design-time-name="fc894ff3-5810-47a7-afbc-f514aa1671cc" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="200" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Ciudad" msprop:FriendlyName="Ciudad" msprop:DbColumnName="Ciudad" msprop:design-time-name="a1a52b3a-65dd-4315-b0e2-41a5100dda34" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="100" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Region" msprop:FriendlyName="Region" msprop:DbColumnName="Region" msprop:design-time-name="035445d6-b02d-4cb1-b950-14ac2a0416a7" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="100" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Pais" msprop:FriendlyName="Pais" msprop:DbColumnName="Pais" msprop:design-time-name="ee479bda-7cea-432f-9bef-5b800bf28469" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="100" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dw_DIM_ESTADO_TRANSACCION" msprop:DbTableName="DIM_ESTADO_TRANSACCION" msprop:FriendlyName="DIM_ESTADO_TRANSACCION" msprop:TableType="Table" msprop:DbSchemaName="dw" msprop:design-time-name="faa143d1-3741-4027-bab8-e9ab13f1eaa2">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="EstadoKey" msprop:FriendlyName="EstadoKey" msprop:DbColumnName="EstadoKey" msprop:design-time-name="f47d075c-14df-41be-9048-38906f379947" type="xs:unsignedByte" />
+                  <xs:element name="NombreEstado" msprop:FriendlyName="NombreEstado" msprop:DbColumnName="NombreEstado" msprop:design-time-name="5d8a73c8-2fbd-4ced-b5a0-f9dbaa0b5a1f" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Descripcion" msprop:FriendlyName="Descripcion" msprop:DbColumnName="Descripcion" msprop:design-time-name="403fa8b4-0114-4a05-94c2-21b130126d0c" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="200" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="EsExitosa" msprop:FriendlyName="EsExitosa" msprop:DbColumnName="EsExitosa" msprop:design-time-name="f23a22c0-99c7-4da5-b6c4-10a24d9ad948" type="xs:boolean" minOccurs="0" />
+                  <xs:element name="EsRechazada" msprop:FriendlyName="EsRechazada" msprop:DbColumnName="EsRechazada" msprop:design-time-name="1c9d4524-4ebd-4288-afd4-bef6858f0cb9" type="xs:boolean" minOccurs="0" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dw_FACT_TRANSACCIONES_TARJETA" msprop:DbTableName="FACT_TRANSACCIONES_TARJETA" msprop:FriendlyName="FACT_TRANSACCIONES_TARJETA" msprop:TableType="Table" msprop:DbSchemaName="dw" msprop:design-time-name="a0d46bbb-f446-47a1-b0a9-db410644f783">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="FactId" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:FriendlyName="FactId" msprop:DbColumnName="FactId" msprop:design-time-name="63c540c6-0ca0-43c7-9ccf-2dedde4b3638" type="xs:long" />
+                  <xs:element name="AutorizacionId" msprop:FriendlyName="AutorizacionId" msprop:DbColumnName="AutorizacionId" msprop:design-time-name="4f979fc6-1da7-4969-a66b-8ea518b7fb44" type="xs:long" />
+                  <xs:element name="TiempoKey" msprop:FriendlyName="TiempoKey" msprop:DbColumnName="TiempoKey" msprop:design-time-name="44a2a75f-bb54-43c0-b68f-730d1b531970" type="xs:int" />
+                  <xs:element name="ComercioKey" msprop:FriendlyName="ComercioKey" msprop:DbColumnName="ComercioKey" msprop:design-time-name="ca81f7fa-2136-4265-878c-6abcfb7f9a5a" type="xs:int" />
+                  <xs:element name="ClienteKey" msprop:FriendlyName="ClienteKey" msprop:DbColumnName="ClienteKey" msprop:design-time-name="429d3605-0e0b-4bac-9ce9-f287a7157e4a" type="xs:int" />
+                  <xs:element name="ProductoKey" msprop:FriendlyName="ProductoKey" msprop:DbColumnName="ProductoKey" msprop:design-time-name="150271e2-4df7-4768-b07b-6a17111fcf9d" type="xs:int" />
+                  <xs:element name="SucursalKey" msprop:FriendlyName="SucursalKey" msprop:DbColumnName="SucursalKey" msprop:design-time-name="990a84cd-fd57-4d94-a816-cc3dae887e97" type="xs:int" minOccurs="0" />
+                  <xs:element name="EstadoKey" msprop:FriendlyName="EstadoKey" msprop:DbColumnName="EstadoKey" msprop:design-time-name="50c3247b-a9de-4972-a55d-8cbe9cf1c49d" type="xs:unsignedByte" />
+                  <xs:element name="MontoAutorizado" msprop:FriendlyName="MontoAutorizado" msprop:DbColumnName="MontoAutorizado" msprop:design-time-name="1c5d7c85-c4eb-47e5-8960-f9e95caf64d8" type="xs:decimal" />
+                  <xs:element name="MontoCapturado" msprop:FriendlyName="MontoCapturado" msprop:DbColumnName="MontoCapturado" msprop:design-time-name="b7354c9a-7201-49b8-99f1-a11aa9b3ce1c" type="xs:decimal" />
+                  <xs:element name="CantidadTransacciones" msprop:FriendlyName="CantidadTransacciones" msprop:DbColumnName="CantidadTransacciones" msprop:design-time-name="9d5f761e-e234-464f-9454-87d564238606" type="xs:int" minOccurs="0" />
+                  <xs:element name="TieneDisputa" msprop:FriendlyName="TieneDisputa" msprop:DbColumnName="TieneDisputa" msprop:design-time-name="8f70c729-508e-4b71-8a79-b2e5cb33761a" type="xs:boolean" minOccurs="0" />
+                  <xs:element name="TransaccionExitosa" msprop:FriendlyName="TransaccionExitosa" msprop:DbColumnName="TransaccionExitosa" msprop:design-time-name="42a14e19-11f4-4d4f-bb89-01339693d16c" type="xs:boolean" minOccurs="0" />
+                  <xs:element name="FechaHoraAutorizacion" msprop:FriendlyName="FechaHoraAutorizacion" msprop:DbColumnName="FechaHoraAutorizacion" msprop:design-time-name="83a4574c-5ee6-4ac2-be21-8e8eb3611146" type="xs:dateTime" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+        <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dw_DIM_TIEMPO" />
+          <xs:field xpath="TiempoKey" />
+        </xs:unique>
+        <xs:unique name="dw_DIM_CLIENTE_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dw_DIM_CLIENTE" />
+          <xs:field xpath="ClienteKey" />
+        </xs:unique>
+        <xs:unique name="dw_DIM_COMERCIO_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dw_DIM_COMERCIO" />
+          <xs:field xpath="ComercioKey" />
+        </xs:unique>
+        <xs:unique name="dw_DIM_PRODUCTO_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dw_DIM_PRODUCTO" />
+          <xs:field xpath="ProductoKey" />
+        </xs:unique>
+        <xs:unique name="dw_DIM_SUCURSAL_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dw_DIM_SUCURSAL" />
+          <xs:field xpath="SucursalKey" />
+        </xs:unique>
+        <xs:unique name="dw_DIM_ESTADO_TRANSACCION_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dw_DIM_ESTADO_TRANSACCION" />
+          <xs:field xpath="EstadoKey" />
+        </xs:unique>
+        <xs:unique name="dw_FACT_TRANSACCIONES_TARJETA_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dw_FACT_TRANSACCIONES_TARJETA" />
+          <xs:field xpath="FactId" />
+        </xs:unique>
+      </xs:element>
+      <xs:annotation>
+        <xs:appinfo>
+          <msdata:Relationship name="FACT_TRANSACCIONES_TARJETA-DIM_TIEMPO" msdata:parent="dw_DIM_TIEMPO" msdata:child="dw_FACT_TRANSACCIONES_TARJETA" msdata:parentkey="TiempoKey" msdata:childkey="TiempoKey" />
+          <msdata:Relationship name="FACT_TRANSACCIONES_TARJETA-DIM_COMERCIO" msdata:parent="dw_DIM_COMERCIO" msdata:child="dw_FACT_TRANSACCIONES_TARJETA" msdata:parentkey="ComercioKey" msdata:childkey="ComercioKey" />
+          <msdata:Relationship name="FACT_TRANSACCIONES_TARJETA-DIM_CLIENTE" msdata:parent="dw_DIM_CLIENTE" msdata:child="dw_FACT_TRANSACCIONES_TARJETA" msdata:parentkey="ClienteKey" msdata:childkey="ClienteKey" />
+          <msdata:Relationship name="FACT_TRANSACCIONES_TARJETA-DIM_PRODUCTO" msdata:parent="dw_DIM_PRODUCTO" msdata:child="dw_FACT_TRANSACCIONES_TARJETA" msdata:parentkey="ProductoKey" msdata:childkey="ProductoKey" />
+          <msdata:Relationship name="FACT_TRANSACCIONES_TARJETA-DIM_SUCURSAL" msdata:parent="dw_DIM_SUCURSAL" msdata:child="dw_FACT_TRANSACCIONES_TARJETA" msdata:parentkey="SucursalKey" msdata:childkey="SucursalKey" />
+          <msdata:Relationship name="FACT_TRANSACCIONES_TARJETA-DIM_ESTADO_TRANSACCION" msdata:parent="dw_DIM_ESTADO_TRANSACCION" msdata:child="dw_FACT_TRANSACCIONES_TARJETA" msdata:parentkey="EstadoKey" msdata:childkey="EstadoKey" />
+        </xs:appinfo>
+      </xs:annotation>
+    </xs:schema>
+    <Tarjetas_x0020_DW xmlns="" />
+  </Schema>
+</DataSourceView>

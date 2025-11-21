@@ -1,0 +1,294 @@
+﻿<DataSourceView xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="f7c1c564-4206-4cc6-96c8-31fd02309402" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Prestamos DW</ID>
+  <Name>Prestamos DW</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:CurrentLayout</Name>
+      <Value>_ALL_TABLES_</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:NameMatchingCriteria</Name>
+      <Value>1</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:SchemaRestriction</Name>
+      <Value></Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:RetrieveRelationships</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:Layouts</Name>
+      <Value>
+        <Layouts xmlns="">
+          <Diagram>
+            <Name>_ALL_TABLES_</Name>
+            <DiagramLayout />
+            <ShowRelationshipNames>False</ShowRelationshipNames>
+            <UseDiagramDefaultLayout>True</UseDiagramDefaultLayout>
+            <DiagramViewPortLeft>0</DiagramViewPortLeft>
+            <DiagramViewPortTop>0</DiagramViewPortTop>
+            <DiagramBoundingLeft>0</DiagramBoundingLeft>
+            <DiagramBoundingTop>0</DiagramBoundingTop>
+            <DiagramZoom>100</DiagramZoom>
+          </Diagram>
+        </Layouts>
+      </Value>
+    </Annotation>
+  </Annotations>
+  <DataSourceID>Prestamos DW</DataSourceID>
+  <Schema>
+    <xs:schema id="Prestamos_x0020_DW" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop">
+      <xs:element name="Prestamos_x0020_DW" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:design-time-name="d1ca9337-d105-4ab9-a071-4da5b2571f15">
+        <xs:complexType>
+          <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="dw_DIM_TIEMPO" msprop:DbTableName="DIM_TIEMPO" msprop:FriendlyName="DIM_TIEMPO" msprop:TableType="Table" msprop:DbSchemaName="dw" msprop:design-time-name="fe8741a0-719d-4389-9e98-3cf6505a0989">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="TiempoKey" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:FriendlyName="TiempoKey" msprop:DbColumnName="TiempoKey" msprop:design-time-name="12927ac7-2615-4239-91c9-75e65c10679c" type="xs:int" />
+                  <xs:element name="Fecha" msprop:FriendlyName="Fecha" msprop:DbColumnName="Fecha" msprop:design-time-name="7c428d52-ab28-45d1-ba7c-13779eeaa51f" type="xs:dateTime" />
+                  <xs:element name="Año" msprop:FriendlyName="Año" msprop:DbColumnName="Año" msprop:design-time-name="9aaaf062-086f-448a-a6a6-fdfb1990805e" type="xs:int" />
+                  <xs:element name="Mes" msprop:FriendlyName="Mes" msprop:DbColumnName="Mes" msprop:design-time-name="218bd06d-5f65-45e4-910d-bf9c992a4c31" type="xs:int" />
+                  <xs:element name="Trimestre" msprop:FriendlyName="Trimestre" msprop:DbColumnName="Trimestre" msprop:design-time-name="b1f68fd9-f7e6-4a45-b8e2-6f4979108c19" type="xs:int" />
+                  <xs:element name="Semestre" msprop:FriendlyName="Semestre" msprop:DbColumnName="Semestre" msprop:design-time-name="50314618-5b88-4da8-bd76-c2efcaf1dfc2" type="xs:int" />
+                  <xs:element name="NombreMes" msprop:FriendlyName="NombreMes" msprop:DbColumnName="NombreMes" msprop:design-time-name="82a08445-8899-4c93-bb79-9ad8ca1b8f00">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="20" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dw_DIM_PRODUCTO" msprop:DbTableName="DIM_PRODUCTO" msprop:FriendlyName="DIM_PRODUCTO" msprop:TableType="Table" msprop:DbSchemaName="dw" msprop:design-time-name="0e55cca6-8356-451f-a8ac-73142ba55e0a">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="ProductoKey" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:FriendlyName="ProductoKey" msprop:DbColumnName="ProductoKey" msprop:design-time-name="87230d12-f1c7-48b6-a452-82f8cbd46310" type="xs:int" />
+                  <xs:element name="ProductoId" msprop:FriendlyName="ProductoId" msprop:DbColumnName="ProductoId" msprop:design-time-name="1cdf96ea-3cf4-4392-b733-15de00424d1f" type="xs:long" />
+                  <xs:element name="LoanProductoId" msprop:FriendlyName="LoanProductoId" msprop:DbColumnName="LoanProductoId" msprop:design-time-name="8b59f38e-2e0b-46cd-8526-1e33a3851810" type="xs:long" />
+                  <xs:element name="CodigoProducto" msprop:FriendlyName="CodigoProducto" msprop:DbColumnName="CodigoProducto" msprop:design-time-name="ffc4681b-f570-419a-a3e5-dae5f4afefc4">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="32" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="NombreProducto" msprop:FriendlyName="NombreProducto" msprop:DbColumnName="NombreProducto" msprop:design-time-name="4e1fe1f3-6227-4f05-a279-18746f777756">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="128" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="CategoriaProducto" msprop:FriendlyName="CategoriaProducto" msprop:DbColumnName="CategoriaProducto" msprop:design-time-name="c2faa752-d39a-4748-bd53-7ffa95542e2d">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="32" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="CodigoMoneda" msprop:FriendlyName="CodigoMoneda" msprop:DbColumnName="CodigoMoneda" msprop:design-time-name="db2cf697-e2fa-492c-bc88-aa23f7a21223" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="3" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dw_DIM_SUCURSAL" msprop:DbTableName="DIM_SUCURSAL" msprop:FriendlyName="DIM_SUCURSAL" msprop:TableType="Table" msprop:DbSchemaName="dw" msprop:design-time-name="8ed20388-f719-4b5e-8da9-b3d1c84a0422">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="SucursalKey" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:FriendlyName="SucursalKey" msprop:DbColumnName="SucursalKey" msprop:design-time-name="195e5799-5c1b-4a16-90a5-6c9980f8553b" type="xs:int" />
+                  <xs:element name="SucursalId" msprop:FriendlyName="SucursalId" msprop:DbColumnName="SucursalId" msprop:design-time-name="97d6b127-8cd3-4aae-b166-2f0d5964eb32" type="xs:long" />
+                  <xs:element name="NombreSucursal" msprop:FriendlyName="NombreSucursal" msprop:DbColumnName="NombreSucursal" msprop:design-time-name="7b5c372b-aeec-4c1e-8bc1-9f55f69d548f">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="128" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="CiudadId" msprop:FriendlyName="CiudadId" msprop:DbColumnName="CiudadId" msprop:design-time-name="08472615-0419-49b4-aed2-eff5ca8377a6" type="xs:long" minOccurs="0" />
+                  <xs:element name="CiudadNombre" msprop:FriendlyName="CiudadNombre" msprop:DbColumnName="CiudadNombre" msprop:design-time-name="ad3a7027-5cee-4aba-8eb9-a34d3eaca65b" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="100" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="RegionSucursal" msprop:FriendlyName="RegionSucursal" msprop:DbColumnName="RegionSucursal" msprop:design-time-name="e5c67122-32af-414c-8df2-525016b7ae02" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="100" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="PaisSucursal" msprop:FriendlyName="PaisSucursal" msprop:DbColumnName="PaisSucursal" msprop:design-time-name="645b127d-100e-495d-9fa0-69f6011740d9" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="100" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dw_DIM_CLIENTE" msprop:DbTableName="DIM_CLIENTE" msprop:FriendlyName="DIM_CLIENTE" msprop:TableType="Table" msprop:DbSchemaName="dw" msprop:design-time-name="d3db553d-4bb5-4165-b35a-5e854b350142">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="ClienteKey" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:FriendlyName="ClienteKey" msprop:DbColumnName="ClienteKey" msprop:design-time-name="08458f1b-ea26-4531-a2ba-654c0ab807a2" type="xs:int" />
+                  <xs:element name="ClienteId" msprop:FriendlyName="ClienteId" msprop:DbColumnName="ClienteId" msprop:design-time-name="36c3e537-8a57-49d7-b07d-09e15ac7290e" type="xs:long" />
+                  <xs:element name="TipoCliente" msprop:FriendlyName="TipoCliente" msprop:DbColumnName="TipoCliente" msprop:design-time-name="784d7d95-c6ed-409f-b8e9-1e596041ab62">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="16" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="PersonaId" msprop:FriendlyName="PersonaId" msprop:DbColumnName="PersonaId" msprop:design-time-name="95391a5d-9a34-4c55-9305-621feb7b0338" type="xs:long" minOccurs="0" />
+                  <xs:element name="OrganizacionId" msprop:FriendlyName="OrganizacionId" msprop:DbColumnName="OrganizacionId" msprop:design-time-name="d1f1902a-42d0-4e24-9cb3-3d665430b092" type="xs:long" minOccurs="0" />
+                  <xs:element name="NombreCompleto" msprop:FriendlyName="NombreCompleto" msprop:DbColumnName="NombreCompleto" msprop:design-time-name="aeb277e5-072e-474d-8066-f551676f0e69">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="300" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Genero" msprop:FriendlyName="Genero" msprop:DbColumnName="Genero" msprop:design-time-name="e518eda4-40c5-4851-8e75-2e5344422a91" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="15" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="NacionalidadPais" msprop:FriendlyName="NacionalidadPais" msprop:DbColumnName="NacionalidadPais" msprop:design-time-name="340a7f18-ff1b-4210-b648-a7da12c40be2" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="100" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dw_DIM_RISK_GRADE" msprop:DbTableName="DIM_RISK_GRADE" msprop:FriendlyName="DIM_RISK_GRADE" msprop:TableType="Table" msprop:DbSchemaName="dw" msprop:design-time-name="d219ae1a-00f0-4d47-976a-e7b8a7e520c0">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="RiskGradeKey" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:FriendlyName="RiskGradeKey" msprop:DbColumnName="RiskGradeKey" msprop:design-time-name="3a9e5c02-0ec1-4224-9951-0a946736cf8e" type="xs:int" />
+                  <xs:element name="RiskGradeId" msprop:FriendlyName="RiskGradeId" msprop:DbColumnName="RiskGradeId" msprop:design-time-name="78ab8bf8-a9b1-4959-a6ba-66daa743f944" type="xs:long" />
+                  <xs:element name="CodigoRiesgo" msprop:FriendlyName="CodigoRiesgo" msprop:DbColumnName="CodigoRiesgo" msprop:design-time-name="b7073bc1-1fd8-4966-a240-389cc1a6cefa">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="8" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="NombreRiesgo" msprop:FriendlyName="NombreRiesgo" msprop:DbColumnName="NombreRiesgo" msprop:design-time-name="ecbbd03e-03e2-466c-8c8e-b3fb7c2274e3">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="64" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dw_DIM_ESTADO_PRESTAMO" msprop:DbTableName="DIM_ESTADO_PRESTAMO" msprop:FriendlyName="DIM_ESTADO_PRESTAMO" msprop:TableType="Table" msprop:DbSchemaName="dw" msprop:design-time-name="e11303de-a1fb-460d-8694-bf745a40a6b4">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="EstadoKey" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:FriendlyName="EstadoKey" msprop:DbColumnName="EstadoKey" msprop:design-time-name="678b1db9-cd09-434e-a49b-a01355f38411" type="xs:int" />
+                  <xs:element name="EstadoNumerico" msprop:FriendlyName="EstadoNumerico" msprop:DbColumnName="EstadoNumerico" msprop:design-time-name="f5e3f659-f066-45c9-8251-33b6e6bce9d9" type="xs:int" />
+                  <xs:element name="EstadoPrestamo" msprop:FriendlyName="EstadoPrestamo" msprop:DbColumnName="EstadoPrestamo" msprop:design-time-name="210d86e3-2693-4d2c-b91a-ad90f7f6a5e5">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="20" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="EstadoPrestamoDescripcion" msprop:FriendlyName="EstadoPrestamoDescripcion" msprop:DbColumnName="EstadoPrestamoDescripcion" msprop:design-time-name="cf423391-20ab-40b7-b0f9-1a5b4db52a35" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="100" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dw_FACT_PRESTAMOS" msprop:DbTableName="FACT_PRESTAMOS" msprop:FriendlyName="FACT_PRESTAMOS" msprop:TableType="Table" msprop:DbSchemaName="dw" msprop:design-time-name="ac68ec13-8b38-4fe5-9642-72545b93b2a9">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="PrestamoKey" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:FriendlyName="PrestamoKey" msprop:DbColumnName="PrestamoKey" msprop:design-time-name="11bf1f5c-c95d-4097-b247-87a69dd2eb86" type="xs:int" />
+                  <xs:element name="CuentaId" msprop:FriendlyName="CuentaId" msprop:DbColumnName="CuentaId" msprop:design-time-name="b1a1b240-75e4-4ed0-b2ab-6b0804ce178e" type="xs:long" />
+                  <xs:element name="TiempoKey" msprop:FriendlyName="TiempoKey" msprop:DbColumnName="TiempoKey" msprop:design-time-name="25bb9233-a647-4f8a-9ff3-e4f5878afc23" type="xs:int" />
+                  <xs:element name="ProductoKey" msprop:FriendlyName="ProductoKey" msprop:DbColumnName="ProductoKey" msprop:design-time-name="a537252d-30f0-4954-8461-e1eb5657a882" type="xs:int" />
+                  <xs:element name="SucursalKey" msprop:FriendlyName="SucursalKey" msprop:DbColumnName="SucursalKey" msprop:design-time-name="f81259b0-dbbf-418e-a4fd-f2c6fd7d8be7" type="xs:int" />
+                  <xs:element name="ClienteKey" msprop:FriendlyName="ClienteKey" msprop:DbColumnName="ClienteKey" msprop:design-time-name="7975dfac-fa1c-4ce3-92ac-ef77593194dc" type="xs:int" />
+                  <xs:element name="RiskGradeKey" msprop:FriendlyName="RiskGradeKey" msprop:DbColumnName="RiskGradeKey" msprop:design-time-name="63c2e475-4a3e-430b-8427-5ee6c9a64e82" type="xs:int" minOccurs="0" />
+                  <xs:element name="EstadoKey" msprop:FriendlyName="EstadoKey" msprop:DbColumnName="EstadoKey" msprop:design-time-name="3307200b-8582-4cbf-ad05-1d5cc93c659a" type="xs:int" />
+                  <xs:element name="NumeroPrestamosOtorgados" msprop:FriendlyName="NumeroPrestamosOtorgados" msprop:DbColumnName="NumeroPrestamosOtorgados" msprop:design-time-name="cd48286f-7195-412a-99f1-ae5002ab5267" type="xs:int" />
+                  <xs:element name="MontoDesembolsadoTotal" msprop:FriendlyName="MontoDesembolsadoTotal" msprop:DbColumnName="MontoDesembolsadoTotal" msprop:design-time-name="618b5e85-a820-4e5f-8175-ea468d9947ac" type="xs:decimal" />
+                  <xs:element name="MontoEnMora" msprop:FriendlyName="MontoEnMora" msprop:DbColumnName="MontoEnMora" msprop:design-time-name="582fd219-e9c1-4092-967b-012ae31d4fa8" type="xs:decimal" minOccurs="0" />
+                  <xs:element name="CantidadPrestamosVencidos" msprop:FriendlyName="CantidadPrestamosVencidos" msprop:DbColumnName="CantidadPrestamosVencidos" msprop:design-time-name="f7ccd276-f801-4e11-aea3-d31018614c0c" type="xs:int" minOccurs="0" />
+                  <xs:element name="MontoTotalPagado" msprop:FriendlyName="MontoTotalPagado" msprop:DbColumnName="MontoTotalPagado" msprop:design-time-name="7c9d4f57-27ee-4d8b-90bf-5642abd337a6" type="xs:decimal" minOccurs="0" />
+                  <xs:element name="SaldoPendiente" msprop:FriendlyName="SaldoPendiente" msprop:DbColumnName="SaldoPendiente" msprop:design-time-name="f4378826-50d7-44bf-b542-242c07e3c3ce" type="xs:decimal" />
+                  <xs:element name="TotalVencido" msprop:FriendlyName="TotalVencido" msprop:DbColumnName="TotalVencido" msprop:design-time-name="6e48a0f4-6cc8-463a-bcee-0a8f9ca172bc" type="xs:decimal" minOccurs="0" />
+                  <xs:element name="MontoTotalAdeudado" msprop:FriendlyName="MontoTotalAdeudado" msprop:DbColumnName="MontoTotalAdeudado" msprop:design-time-name="ba67e04a-93bc-4f65-b6bc-522c9942abe6" type="xs:decimal" minOccurs="0" />
+                  <xs:element name="PorcentajeMora" msprop:FriendlyName="PorcentajeMora" msprop:DbColumnName="PorcentajeMora" msprop:design-time-name="67b49c0e-008f-4fdc-95aa-45b220d36536" type="xs:decimal" minOccurs="0" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+        <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dw_DIM_TIEMPO" />
+          <xs:field xpath="TiempoKey" />
+        </xs:unique>
+        <xs:unique name="dw_DIM_PRODUCTO_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dw_DIM_PRODUCTO" />
+          <xs:field xpath="ProductoKey" />
+        </xs:unique>
+        <xs:unique name="dw_DIM_SUCURSAL_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dw_DIM_SUCURSAL" />
+          <xs:field xpath="SucursalKey" />
+        </xs:unique>
+        <xs:unique name="dw_DIM_CLIENTE_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dw_DIM_CLIENTE" />
+          <xs:field xpath="ClienteKey" />
+        </xs:unique>
+        <xs:unique name="dw_DIM_RISK_GRADE_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dw_DIM_RISK_GRADE" />
+          <xs:field xpath="RiskGradeKey" />
+        </xs:unique>
+        <xs:unique name="dw_DIM_ESTADO_PRESTAMO_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dw_DIM_ESTADO_PRESTAMO" />
+          <xs:field xpath="EstadoKey" />
+        </xs:unique>
+        <xs:unique name="dw_FACT_PRESTAMOS_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dw_FACT_PRESTAMOS" />
+          <xs:field xpath="PrestamoKey" />
+        </xs:unique>
+      </xs:element>
+      <xs:annotation>
+        <xs:appinfo>
+          <msdata:Relationship name="FACT_PRESTAMOS-DIM_TIEMPO" msdata:parent="dw_DIM_TIEMPO" msdata:child="dw_FACT_PRESTAMOS" msdata:parentkey="TiempoKey" msdata:childkey="TiempoKey" />
+          <msdata:Relationship name="FACT_PRESTAMOS-DIM_PRODUCTO" msdata:parent="dw_DIM_PRODUCTO" msdata:child="dw_FACT_PRESTAMOS" msdata:parentkey="ProductoKey" msdata:childkey="ProductoKey" />
+          <msdata:Relationship name="FACT_PRESTAMOS-DIM_SUCURSAL" msdata:parent="dw_DIM_SUCURSAL" msdata:child="dw_FACT_PRESTAMOS" msdata:parentkey="SucursalKey" msdata:childkey="SucursalKey" />
+          <msdata:Relationship name="FACT_PRESTAMOS-DIM_CLIENTE" msdata:parent="dw_DIM_CLIENTE" msdata:child="dw_FACT_PRESTAMOS" msdata:parentkey="ClienteKey" msdata:childkey="ClienteKey" />
+          <msdata:Relationship name="FACT_PRESTAMOS-DIM_RISK_GRADE" msdata:parent="dw_DIM_RISK_GRADE" msdata:child="dw_FACT_PRESTAMOS" msdata:parentkey="RiskGradeKey" msdata:childkey="RiskGradeKey" />
+          <msdata:Relationship name="FACT_PRESTAMOS-DIM_ESTADO_PRESTAMO" msdata:parent="dw_DIM_ESTADO_PRESTAMO" msdata:child="dw_FACT_PRESTAMOS" msdata:parentkey="EstadoKey" msdata:childkey="EstadoKey" />
+        </xs:appinfo>
+      </xs:annotation>
+    </xs:schema>
+    <Prestamos_x0020_DW xmlns="" />
+  </Schema>
+</DataSourceView>

@@ -1,0 +1,1591 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="11/21/2025 4:49:18 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="LAPTOP-L8FLUQG3"
+  DTS:CreatorName="LAPTOP-L8FLUQG3\jaav2"
+  DTS:DTSID="{C129C6AE-2CE3-46EE-8A87-BB921D7C8361}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5685.0"
+  DTS:LocaleID="16394"
+  DTS:ObjectName="ETL_USUARIOS"
+  DTS:PackageType="5"
+  DTS:VersionBuild="4"
+  DTS:VersionGUID="{D70B7DA0-081E-4AEE-B4A4-1248492AA59F}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Data Flow Task"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{887C8983-199F-4AB1-A755-E89F2E176611}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Flow Task"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Data Flow Task\ADO NET Destination"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Loads data into an ADO.NET-compliant database that uses a database table or view. Load data into a new or existing table. For example, use an ADO.NET provider for ODBC to load data into an ODBC destination.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Loads data into an ADO.NET-compliant database that uses a database table or view. Load data into a new or existing table. For example, use an ADO.NET provider for ODBC to load data into an ODBC destination."
+              name="ADO NET Destination"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="The Destination database table name."
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">"dw"."FACT_USUARIOS"</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specify the number of rows per batch. The default is 0 which uses the same size as SSIS internal buffer. "
+                  expressionType="Notify"
+                  name="BatchSize">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out. A value of 0 indicates infinite time-out. "
+                  expressionType="Notify"
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether to use the SqlBulkCopy interface to improve the performance of bulk insert operations. Only certain providers support this interface."
+                  expressionType="Notify"
+                  name="UseBulkInsertWhenPossible">true</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.ADONETDestination</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\ADO NET Destination.Connections[IDbConnection]"
+                  connectionManagerID="{9D56B3D7-DF42-404E-B0DB-CB37E3A2D119}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[LAPTOP-L8FLUQG3.UsuariosDW.sa]"
+                  description="Managed connection manager"
+                  name="IDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input]"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="ADO NET Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[RegistroTiempoKey]"
+                      cachedDataType="i4"
+                      cachedName="RegistroTiempoKey"
+                      externalMetadataColumnId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[RegistroTiempoKey]"
+                      lineageId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[RegistroTiempoKey]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[SucursalKey]"
+                      cachedDataType="i4"
+                      cachedName="SucursalKey"
+                      externalMetadataColumnId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[SucursalKey]"
+                      lineageId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[SucursalKey]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[RolKey]"
+                      cachedDataType="i4"
+                      cachedName="RolKey"
+                      externalMetadataColumnId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[RolKey]"
+                      lineageId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[RolKey]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[CanalKey]"
+                      cachedDataType="i4"
+                      cachedName="CanalKey"
+                      externalMetadataColumnId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[CanalKey]"
+                      lineageId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[CanalKey]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[TipoUsuarioKey]"
+                      cachedDataType="i4"
+                      cachedName="TipoUsuarioKey"
+                      externalMetadataColumnId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[TipoUsuarioKey]"
+                      lineageId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[TipoUsuarioKey]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[UsuarioId]"
+                      cachedDataType="i8"
+                      cachedName="UsuarioId"
+                      externalMetadataColumnId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[UsuarioId]"
+                      lineageId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[UsuarioId]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[UsuarioNombre]"
+                      cachedDataType="wstr"
+                      cachedLength="64"
+                      cachedName="UsuarioNombre"
+                      externalMetadataColumnId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[UsuarioNombre]"
+                      lineageId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[UsuarioNombre]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[UsuarioActivo]"
+                      cachedDataType="i4"
+                      cachedName="UsuarioActivo"
+                      externalMetadataColumnId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[UsuarioActivo]"
+                      lineageId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[UsuarioActivo]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[TieneDispositivo]"
+                      cachedDataType="i4"
+                      cachedName="TieneDispositivo"
+                      externalMetadataColumnId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[TieneDispositivo]"
+                      lineageId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[TieneDispositivo]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[HaIngresado]"
+                      cachedDataType="i4"
+                      cachedName="HaIngresado"
+                      externalMetadataColumnId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[HaIngresado]"
+                      lineageId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[HaIngresado]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[TotalIngresos]"
+                      cachedDataType="i4"
+                      cachedName="TotalIngresos"
+                      externalMetadataColumnId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[TotalIngresos]"
+                      lineageId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[TotalIngresos]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[UsuarioKey]"
+                      dataType="i8"
+                      name="UsuarioKey" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[RegistroTiempoKey]"
+                      dataType="i4"
+                      name="RegistroTiempoKey" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[SucursalKey]"
+                      dataType="i4"
+                      name="SucursalKey" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[RolKey]"
+                      dataType="i4"
+                      name="RolKey" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[CanalKey]"
+                      dataType="i4"
+                      name="CanalKey" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[TipoUsuarioKey]"
+                      dataType="i4"
+                      name="TipoUsuarioKey" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[UsuarioId]"
+                      dataType="i8"
+                      name="UsuarioId" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[UsuarioNombre]"
+                      dataType="wstr"
+                      length="200"
+                      name="UsuarioNombre" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[UsuarioActivo]"
+                      dataType="i4"
+                      name="UsuarioActivo" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[TieneDispositivo]"
+                      dataType="i4"
+                      name="TieneDispositivo" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[HaIngresado]"
+                      dataType="i4"
+                      name="HaIngresado" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[TotalIngresos]"
+                      dataType="i4"
+                      name="TotalIngresos" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[FechaCarga]"
+                      dataType="dbTimeStamp"
+                      name="FechaCarga" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\ADO NET Destination.Outputs[ADO NET Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="ADO NET Destination Error Output"
+                  synchronousInputId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\ADO NET Destination.Outputs[ADO NET Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\ADO NET Destination.Outputs[ADO NET Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ADO NET Destination.Outputs[ADO NET Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\ADO NET Destination.Outputs[ADO NET Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\ADO NET Source"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Consumes data from SQL Server, OLE DB, ODBC, or Oracle, using the corresponding .NET Framework data provider. Use a Transact-SQL statement to define the result set. For example, extract data from SQL Server with the .NET Framework data provider for SQL Server.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="Consumes data from SQL Server, OLE DB, ODBC, or Oracle, using the corresponding .NET Framework data provider. Use a Transact-SQL statement to define the result set. For example, extract data from SQL Server with the .NET Framework data provider for SQL Server."
+              name="ADO NET Source"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement used by the component to extract data."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT 
+    dt.TiempoKey AS RegistroTiempoKey,
+    ds.SucursalKey,
+    dr.RolKey,
+    dc.CanalKey,
+    dtu.TipoUsuarioKey,
+    u.UsuarioId,
+    u.UsuarioNombre,
+    CAST(u.Estado AS INT) AS UsuarioActivo,
+    CASE WHEN dispositivo.UsuarioId IS NOT NULL THEN 1 ELSE 0 END AS TieneDispositivo,
+    CASE WHEN ingreso.UsuarioId IS NOT NULL THEN 1 ELSE 0 END AS HaIngresado,
+    ISNULL(ingreso.TotalIngresos, 0) AS TotalIngresos
+FROM BnacoDB2.seguridad.Usuario u
+LEFT JOIN BnacoDB2.nucleo.Cliente c ON u.ClienteId = c.ClienteId
+LEFT JOIN BnacoDB2.nucleo.Empleado e ON u.EmpleadoId = e.EmpleadoId
+INNER JOIN BnacoDB2.seguridad.UsuarioRol ur ON u.UsuarioId = ur.UsuarioId AND ur.Estado = 1
+-- Lookup dispositivo (primera plataforma registrada)
+LEFT JOIN (
+    SELECT UsuarioId, Plataforma,
+           ROW_NUMBER() OVER (PARTITION BY UsuarioId ORDER BY CreadoEn) AS rn
+    FROM BnacoDB2.canales.Dispositivo
+    WHERE Estado = 1
+) dispositivo ON u.UsuarioId = dispositivo.UsuarioId AND dispositivo.rn = 1
+-- Lookup ingresos exitosos
+LEFT JOIN (
+    SELECT UsuarioId, COUNT(*) AS TotalIngresos
+    FROM BnacoDB2.canales.IntentoIngreso
+    WHERE Exito = 1
+    GROUP BY UsuarioId
+) ingreso ON u.UsuarioId = ingreso.UsuarioId
+-- Dimensiones
+INNER JOIN UsuariosDW.dw.DIM_SUCURSAL ds ON ds.SucursalId = COALESCE(c.SucursalPrincipalId, e.SucursalId)
+INNER JOIN UsuariosDW.dw.DIM_ROL dr ON dr.RolId = ur.RolId
+INNER JOIN UsuariosDW.dw.DIM_CANAL dc ON dc.Plataforma COLLATE Modern_Spanish_CI_AS = ISNULL(dispositivo.Plataforma, 'Desconocido')
+INNER JOIN UsuariosDW.dw.DIM_TIPO_USUARIO dtu ON dtu.TipoUsuario = CASE WHEN u.ClienteId IS NOT NULL THEN 'CLIENTE' ELSE 'EMPLEADO' END
+LEFT JOIN UsuariosDW.dw.DIM_TIEMPO dt ON dt.Fecha = CAST(u.CreadoEn AS DATE)
+WHERE (u.ClienteId IS NOT NULL OR u.EmpleadoId IS NOT NULL)
+  AND NOT EXISTS (
+      SELECT 1 
+      FROM UsuariosDW.dw.FACT_USUARIOS fu 
+      WHERE fu.UsuarioId = u.UsuarioId
+  );</property>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether to allow non-string external columns to be implicitly converted to strings at the output columns."
+                  name="AllowImplicitStringConversion">true</property>
+                <property
+                  dataType="System.String"
+                  description="The Source database table name."
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specify the mode to retrieve external column information"
+                  name="AccessMode"
+                  typeConverter="Microsoft.SqlServer.Dts.Pipeline.DataReaderSourceAdapter+EnumToStringConverter">2</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.DataReaderSourceAdapter</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\ADO NET Source.Connections[IDbConnection]"
+                  connectionManagerID="{832E84BA-C233-4CCB-BB40-BE2225A191E0}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[LAPTOP-L8FLUQG3.BnacoDB2.sa]"
+                  description="Managed connection manager"
+                  name="IDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output]"
+                  name="ADO NET Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[RegistroTiempoKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[RegistroTiempoKey]"
+                      lineageId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[RegistroTiempoKey]"
+                      name="RegistroTiempoKey"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[SucursalKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[SucursalKey]"
+                      lineageId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[SucursalKey]"
+                      name="SucursalKey"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[RolKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[RolKey]"
+                      lineageId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[RolKey]"
+                      name="RolKey"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[CanalKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[CanalKey]"
+                      lineageId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[CanalKey]"
+                      name="CanalKey"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[TipoUsuarioKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[TipoUsuarioKey]"
+                      lineageId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[TipoUsuarioKey]"
+                      name="TipoUsuarioKey"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[UsuarioId]"
+                      dataType="i8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[UsuarioId]"
+                      lineageId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[UsuarioId]"
+                      name="UsuarioId"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[UsuarioNombre]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[UsuarioNombre]"
+                      length="64"
+                      lineageId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[UsuarioNombre]"
+                      name="UsuarioNombre"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[UsuarioActivo]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[UsuarioActivo]"
+                      lineageId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[UsuarioActivo]"
+                      name="UsuarioActivo"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[TieneDispositivo]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[TieneDispositivo]"
+                      lineageId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[TieneDispositivo]"
+                      name="TieneDispositivo"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[HaIngresado]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[HaIngresado]"
+                      lineageId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[HaIngresado]"
+                      name="HaIngresado"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[TotalIngresos]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[TotalIngresos]"
+                      lineageId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[TotalIngresos]"
+                      name="TotalIngresos"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[RegistroTiempoKey]"
+                      dataType="i4"
+                      name="RegistroTiempoKey" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[SucursalKey]"
+                      dataType="i4"
+                      name="SucursalKey" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[RolKey]"
+                      dataType="i4"
+                      name="RolKey" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[CanalKey]"
+                      dataType="i4"
+                      name="CanalKey" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[TipoUsuarioKey]"
+                      dataType="i4"
+                      name="TipoUsuarioKey" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[UsuarioId]"
+                      dataType="i8"
+                      name="UsuarioId" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[UsuarioNombre]"
+                      dataType="wstr"
+                      length="64"
+                      name="UsuarioNombre" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[UsuarioActivo]"
+                      dataType="i4"
+                      name="UsuarioActivo" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[TieneDispositivo]"
+                      dataType="i4"
+                      name="TieneDispositivo" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[HaIngresado]"
+                      dataType="i4"
+                      name="HaIngresado" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[TotalIngresos]"
+                      dataType="i4"
+                      name="TotalIngresos" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Error Output]"
+                  isErrorOut="true"
+                  name="ADO NET Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[RegistroTiempoKey]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[RegistroTiempoKey]"
+                      name="RegistroTiempoKey" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[SucursalKey]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[SucursalKey]"
+                      name="SucursalKey" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[RolKey]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[RolKey]"
+                      name="RolKey" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[CanalKey]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[CanalKey]"
+                      name="CanalKey" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[TipoUsuarioKey]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[TipoUsuarioKey]"
+                      name="TipoUsuarioKey" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[UsuarioId]"
+                      dataType="i8"
+                      lineageId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[UsuarioId]"
+                      name="UsuarioId" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[UsuarioNombre]"
+                      dataType="wstr"
+                      length="64"
+                      lineageId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[UsuarioNombre]"
+                      name="UsuarioNombre" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[UsuarioActivo]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[UsuarioActivo]"
+                      name="UsuarioActivo" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[TieneDispositivo]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[TieneDispositivo]"
+                      name="TieneDispositivo" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[HaIngresado]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[HaIngresado]"
+                      name="HaIngresado" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[TotalIngresos]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[TotalIngresos]"
+                      name="TotalIngresos" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Data Flow Task.Paths[ADO NET Source Output]"
+              endId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input]"
+              name="ADO NET Source Output"
+              startId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\DIM_ROL"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{45F1B883-175F-4D85-A443-44EEBDE621CD}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DIM_ROL"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\DIM_ROL\ADO NET Destination"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Loads data into an ADO.NET-compliant database that uses a database table or view. Load data into a new or existing table. For example, use an ADO.NET provider for ODBC to load data into an ODBC destination.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Loads data into an ADO.NET-compliant database that uses a database table or view. Load data into a new or existing table. For example, use an ADO.NET provider for ODBC to load data into an ODBC destination."
+              name="ADO NET Destination"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="The Destination database table name."
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">"dw"."DIM_ROL"</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specify the number of rows per batch. The default is 0 which uses the same size as SSIS internal buffer. "
+                  expressionType="Notify"
+                  name="BatchSize">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out. A value of 0 indicates infinite time-out. "
+                  expressionType="Notify"
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether to use the SqlBulkCopy interface to improve the performance of bulk insert operations. Only certain providers support this interface."
+                  expressionType="Notify"
+                  name="UseBulkInsertWhenPossible">true</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.ADONETDestination</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DIM_ROL\ADO NET Destination.Connections[IDbConnection]"
+                  connectionManagerID="{9D56B3D7-DF42-404E-B0DB-CB37E3A2D119}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[LAPTOP-L8FLUQG3.UsuariosDW.sa]"
+                  description="Managed connection manager"
+                  name="IDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DIM_ROL\ADO NET Destination.Inputs[ADO NET Destination Input]"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="ADO NET Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DIM_ROL\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[RolId]"
+                      cachedDataType="i8"
+                      cachedName="RolId"
+                      externalMetadataColumnId="Package\DIM_ROL\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[RolId]"
+                      lineageId="Package\DIM_ROL\ADO NET Source.Outputs[ADO NET Source Output].Columns[RolId]" />
+                    <inputColumn
+                      refId="Package\DIM_ROL\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Codigo]"
+                      cachedDataType="wstr"
+                      cachedLength="64"
+                      cachedName="Codigo"
+                      externalMetadataColumnId="Package\DIM_ROL\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Codigo]"
+                      lineageId="Package\DIM_ROL\ADO NET Source.Outputs[ADO NET Source Output].Columns[Codigo]" />
+                    <inputColumn
+                      refId="Package\DIM_ROL\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Nombre]"
+                      cachedDataType="wstr"
+                      cachedLength="128"
+                      cachedName="Nombre"
+                      externalMetadataColumnId="Package\DIM_ROL\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Nombre]"
+                      lineageId="Package\DIM_ROL\ADO NET Source.Outputs[ADO NET Source Output].Columns[Nombre]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DIM_ROL\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[RolKey]"
+                      dataType="i4"
+                      name="RolKey" />
+                    <externalMetadataColumn
+                      refId="Package\DIM_ROL\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[RolId]"
+                      dataType="i8"
+                      name="RolId" />
+                    <externalMetadataColumn
+                      refId="Package\DIM_ROL\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Codigo]"
+                      dataType="wstr"
+                      length="50"
+                      name="Codigo" />
+                    <externalMetadataColumn
+                      refId="Package\DIM_ROL\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Nombre]"
+                      dataType="wstr"
+                      length="200"
+                      name="Nombre" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DIM_ROL\ADO NET Destination.Outputs[ADO NET Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="ADO NET Destination Error Output"
+                  synchronousInputId="Package\DIM_ROL\ADO NET Destination.Inputs[ADO NET Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DIM_ROL\ADO NET Destination.Outputs[ADO NET Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DIM_ROL\ADO NET Destination.Outputs[ADO NET Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DIM_ROL\ADO NET Destination.Outputs[ADO NET Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DIM_ROL\ADO NET Destination.Outputs[ADO NET Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DIM_ROL\ADO NET Source"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Consumes data from SQL Server, OLE DB, ODBC, or Oracle, using the corresponding .NET Framework data provider. Use a Transact-SQL statement to define the result set. For example, extract data from SQL Server with the .NET Framework data provider for SQL Server.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="Consumes data from SQL Server, OLE DB, ODBC, or Oracle, using the corresponding .NET Framework data provider. Use a Transact-SQL statement to define the result set. For example, extract data from SQL Server with the .NET Framework data provider for SQL Server."
+              name="ADO NET Source"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement used by the component to extract data."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT 
+    r.RolId,
+    r.Codigo,
+    r.Nombre
+FROM BnacoDB2.seguridad.Rol r
+WHERE r.Estado = 1
+  AND NOT EXISTS (
+      SELECT 1 
+      FROM UsuariosDW.dw.DIM_ROL dr 
+      WHERE dr.RolId = r.RolId
+  );</property>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether to allow non-string external columns to be implicitly converted to strings at the output columns."
+                  name="AllowImplicitStringConversion">true</property>
+                <property
+                  dataType="System.String"
+                  description="The Source database table name."
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specify the mode to retrieve external column information"
+                  name="AccessMode"
+                  typeConverter="Microsoft.SqlServer.Dts.Pipeline.DataReaderSourceAdapter+EnumToStringConverter">2</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.DataReaderSourceAdapter</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DIM_ROL\ADO NET Source.Connections[IDbConnection]"
+                  connectionManagerID="{832E84BA-C233-4CCB-BB40-BE2225A191E0}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[LAPTOP-L8FLUQG3.BnacoDB2.sa]"
+                  description="Managed connection manager"
+                  name="IDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DIM_ROL\ADO NET Source.Outputs[ADO NET Source Output]"
+                  name="ADO NET Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DIM_ROL\ADO NET Source.Outputs[ADO NET Source Output].Columns[RolId]"
+                      dataType="i8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DIM_ROL\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[RolId]"
+                      lineageId="Package\DIM_ROL\ADO NET Source.Outputs[ADO NET Source Output].Columns[RolId]"
+                      name="RolId"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DIM_ROL\ADO NET Source.Outputs[ADO NET Source Output].Columns[Codigo]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DIM_ROL\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[Codigo]"
+                      length="64"
+                      lineageId="Package\DIM_ROL\ADO NET Source.Outputs[ADO NET Source Output].Columns[Codigo]"
+                      name="Codigo"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DIM_ROL\ADO NET Source.Outputs[ADO NET Source Output].Columns[Nombre]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DIM_ROL\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[Nombre]"
+                      length="128"
+                      lineageId="Package\DIM_ROL\ADO NET Source.Outputs[ADO NET Source Output].Columns[Nombre]"
+                      name="Nombre"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DIM_ROL\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[RolId]"
+                      dataType="i8"
+                      name="RolId" />
+                    <externalMetadataColumn
+                      refId="Package\DIM_ROL\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[Codigo]"
+                      dataType="wstr"
+                      length="64"
+                      name="Codigo" />
+                    <externalMetadataColumn
+                      refId="Package\DIM_ROL\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[Nombre]"
+                      dataType="wstr"
+                      length="128"
+                      name="Nombre" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DIM_ROL\ADO NET Source.Outputs[ADO NET Source Error Output]"
+                  isErrorOut="true"
+                  name="ADO NET Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DIM_ROL\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[RolId]"
+                      dataType="i8"
+                      lineageId="Package\DIM_ROL\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[RolId]"
+                      name="RolId" />
+                    <outputColumn
+                      refId="Package\DIM_ROL\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[Codigo]"
+                      dataType="wstr"
+                      length="64"
+                      lineageId="Package\DIM_ROL\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[Codigo]"
+                      name="Codigo" />
+                    <outputColumn
+                      refId="Package\DIM_ROL\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[Nombre]"
+                      dataType="wstr"
+                      length="128"
+                      lineageId="Package\DIM_ROL\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[Nombre]"
+                      name="Nombre" />
+                    <outputColumn
+                      refId="Package\DIM_ROL\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DIM_ROL\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DIM_ROL\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DIM_ROL\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DIM_ROL.Paths[ADO NET Source Output]"
+              endId="Package\DIM_ROL\ADO NET Destination.Inputs[ADO NET Destination Input]"
+              name="ADO NET Source Output"
+              startId="Package\DIM_ROL\ADO NET Source.Outputs[ADO NET Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\DIM_SUCURSAL"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{83DB0826-75CD-45A3-9DC9-0E02E4B751CA}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DIM_SUCURSAL"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\DIM_SUCURSAL\ADO NET Destination"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Loads data into an ADO.NET-compliant database that uses a database table or view. Load data into a new or existing table. For example, use an ADO.NET provider for ODBC to load data into an ODBC destination.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Loads data into an ADO.NET-compliant database that uses a database table or view. Load data into a new or existing table. For example, use an ADO.NET provider for ODBC to load data into an ODBC destination."
+              name="ADO NET Destination"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="The Destination database table name."
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">"dw"."DIM_SUCURSAL"</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specify the number of rows per batch. The default is 0 which uses the same size as SSIS internal buffer. "
+                  expressionType="Notify"
+                  name="BatchSize">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out. A value of 0 indicates infinite time-out. "
+                  expressionType="Notify"
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether to use the SqlBulkCopy interface to improve the performance of bulk insert operations. Only certain providers support this interface."
+                  expressionType="Notify"
+                  name="UseBulkInsertWhenPossible">true</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.ADONETDestination</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DIM_SUCURSAL\ADO NET Destination.Connections[IDbConnection]"
+                  connectionManagerID="{9D56B3D7-DF42-404E-B0DB-CB37E3A2D119}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[LAPTOP-L8FLUQG3.UsuariosDW.sa]"
+                  description="Managed connection manager"
+                  name="IDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DIM_SUCURSAL\ADO NET Destination.Inputs[ADO NET Destination Input]"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="ADO NET Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DIM_SUCURSAL\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[SucursalId]"
+                      cachedDataType="i8"
+                      cachedName="SucursalId"
+                      externalMetadataColumnId="Package\DIM_SUCURSAL\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[SucursalId]"
+                      lineageId="Package\DIM_SUCURSAL\ADO NET Source.Outputs[ADO NET Source Output].Columns[SucursalId]" />
+                    <inputColumn
+                      refId="Package\DIM_SUCURSAL\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Codigo]"
+                      cachedDataType="wstr"
+                      cachedLength="16"
+                      cachedName="Codigo"
+                      externalMetadataColumnId="Package\DIM_SUCURSAL\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Codigo]"
+                      lineageId="Package\DIM_SUCURSAL\ADO NET Source.Outputs[ADO NET Source Output].Columns[Codigo]" />
+                    <inputColumn
+                      refId="Package\DIM_SUCURSAL\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Nombre]"
+                      cachedDataType="wstr"
+                      cachedLength="128"
+                      cachedName="Nombre"
+                      externalMetadataColumnId="Package\DIM_SUCURSAL\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Nombre]"
+                      lineageId="Package\DIM_SUCURSAL\ADO NET Source.Outputs[ADO NET Source Output].Columns[Nombre]" />
+                    <inputColumn
+                      refId="Package\DIM_SUCURSAL\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Ciudad]"
+                      cachedDataType="wstr"
+                      cachedLength="128"
+                      cachedName="Ciudad"
+                      externalMetadataColumnId="Package\DIM_SUCURSAL\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Ciudad]"
+                      lineageId="Package\DIM_SUCURSAL\ADO NET Source.Outputs[ADO NET Source Output].Columns[Ciudad]" />
+                    <inputColumn
+                      refId="Package\DIM_SUCURSAL\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Region]"
+                      cachedDataType="wstr"
+                      cachedLength="13"
+                      cachedName="Region"
+                      externalMetadataColumnId="Package\DIM_SUCURSAL\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Region]"
+                      lineageId="Package\DIM_SUCURSAL\ADO NET Source.Outputs[ADO NET Source Output].Columns[Region]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DIM_SUCURSAL\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[SucursalKey]"
+                      dataType="i4"
+                      name="SucursalKey" />
+                    <externalMetadataColumn
+                      refId="Package\DIM_SUCURSAL\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[SucursalId]"
+                      dataType="i8"
+                      name="SucursalId" />
+                    <externalMetadataColumn
+                      refId="Package\DIM_SUCURSAL\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Codigo]"
+                      dataType="wstr"
+                      length="50"
+                      name="Codigo" />
+                    <externalMetadataColumn
+                      refId="Package\DIM_SUCURSAL\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Nombre]"
+                      dataType="wstr"
+                      length="200"
+                      name="Nombre" />
+                    <externalMetadataColumn
+                      refId="Package\DIM_SUCURSAL\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Ciudad]"
+                      dataType="wstr"
+                      length="100"
+                      name="Ciudad" />
+                    <externalMetadataColumn
+                      refId="Package\DIM_SUCURSAL\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Region]"
+                      dataType="wstr"
+                      length="100"
+                      name="Region" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DIM_SUCURSAL\ADO NET Destination.Outputs[ADO NET Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="ADO NET Destination Error Output"
+                  synchronousInputId="Package\DIM_SUCURSAL\ADO NET Destination.Inputs[ADO NET Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DIM_SUCURSAL\ADO NET Destination.Outputs[ADO NET Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DIM_SUCURSAL\ADO NET Destination.Outputs[ADO NET Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DIM_SUCURSAL\ADO NET Destination.Outputs[ADO NET Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DIM_SUCURSAL\ADO NET Destination.Outputs[ADO NET Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DIM_SUCURSAL\ADO NET Source"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Consumes data from SQL Server, OLE DB, ODBC, or Oracle, using the corresponding .NET Framework data provider. Use a Transact-SQL statement to define the result set. For example, extract data from SQL Server with the .NET Framework data provider for SQL Server.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="Consumes data from SQL Server, OLE DB, ODBC, or Oracle, using the corresponding .NET Framework data provider. Use a Transact-SQL statement to define the result set. For example, extract data from SQL Server with the .NET Framework data provider for SQL Server."
+              name="ADO NET Source"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement used by the component to extract data."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT 
+    s.SucursalId,
+    s.Codigo,
+    s.Nombre,
+    c.Nombre AS Ciudad,
+    CASE 
+        WHEN c.Nombre LIKE '%La Paz%' THEN 'La Paz'
+        WHEN c.Nombre LIKE '%Santa Cruz%' THEN 'Santa Cruz'
+        WHEN c.Nombre LIKE '%Cochabamba%' THEN 'Cochabamba'
+        WHEN c.Nombre LIKE '%Tarija%' THEN 'Tarija'
+        WHEN c.Nombre LIKE '%Oruro%' THEN 'Oruro'
+        WHEN c.Nombre LIKE '%Potosí%' THEN 'Potosí'
+        WHEN c.Nombre LIKE '%Beni%' THEN 'Beni'
+        WHEN c.Nombre LIKE '%Pando%' THEN 'Pando'
+        WHEN c.Nombre LIKE '%Chuquisaca%' THEN 'Chuquisaca'
+        ELSE 'Internacional'
+    END AS Region
+FROM BnacoDB2.nucleo.Sucursal s
+LEFT JOIN BnacoDB2.referencial.Ciudad c ON s.CiudadId = c.CiudadId
+WHERE s.Estado = 1
+  AND NOT EXISTS (
+      SELECT 1 
+      FROM UsuariosDW.dw.DIM_SUCURSAL ds 
+      WHERE ds.SucursalId = s.SucursalId
+  );</property>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether to allow non-string external columns to be implicitly converted to strings at the output columns."
+                  name="AllowImplicitStringConversion">true</property>
+                <property
+                  dataType="System.String"
+                  description="The Source database table name."
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specify the mode to retrieve external column information"
+                  name="AccessMode"
+                  typeConverter="Microsoft.SqlServer.Dts.Pipeline.DataReaderSourceAdapter+EnumToStringConverter">2</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.DataReaderSourceAdapter</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DIM_SUCURSAL\ADO NET Source.Connections[IDbConnection]"
+                  connectionManagerID="{832E84BA-C233-4CCB-BB40-BE2225A191E0}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[LAPTOP-L8FLUQG3.BnacoDB2.sa]"
+                  description="Managed connection manager"
+                  name="IDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DIM_SUCURSAL\ADO NET Source.Outputs[ADO NET Source Output]"
+                  name="ADO NET Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DIM_SUCURSAL\ADO NET Source.Outputs[ADO NET Source Output].Columns[SucursalId]"
+                      dataType="i8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DIM_SUCURSAL\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[SucursalId]"
+                      lineageId="Package\DIM_SUCURSAL\ADO NET Source.Outputs[ADO NET Source Output].Columns[SucursalId]"
+                      name="SucursalId"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DIM_SUCURSAL\ADO NET Source.Outputs[ADO NET Source Output].Columns[Codigo]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DIM_SUCURSAL\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[Codigo]"
+                      length="16"
+                      lineageId="Package\DIM_SUCURSAL\ADO NET Source.Outputs[ADO NET Source Output].Columns[Codigo]"
+                      name="Codigo"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DIM_SUCURSAL\ADO NET Source.Outputs[ADO NET Source Output].Columns[Nombre]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DIM_SUCURSAL\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[Nombre]"
+                      length="128"
+                      lineageId="Package\DIM_SUCURSAL\ADO NET Source.Outputs[ADO NET Source Output].Columns[Nombre]"
+                      name="Nombre"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DIM_SUCURSAL\ADO NET Source.Outputs[ADO NET Source Output].Columns[Ciudad]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DIM_SUCURSAL\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[Ciudad]"
+                      length="128"
+                      lineageId="Package\DIM_SUCURSAL\ADO NET Source.Outputs[ADO NET Source Output].Columns[Ciudad]"
+                      name="Ciudad"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DIM_SUCURSAL\ADO NET Source.Outputs[ADO NET Source Output].Columns[Region]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DIM_SUCURSAL\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[Region]"
+                      length="13"
+                      lineageId="Package\DIM_SUCURSAL\ADO NET Source.Outputs[ADO NET Source Output].Columns[Region]"
+                      name="Region"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DIM_SUCURSAL\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[SucursalId]"
+                      dataType="i8"
+                      name="SucursalId" />
+                    <externalMetadataColumn
+                      refId="Package\DIM_SUCURSAL\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[Codigo]"
+                      dataType="wstr"
+                      length="16"
+                      name="Codigo" />
+                    <externalMetadataColumn
+                      refId="Package\DIM_SUCURSAL\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[Nombre]"
+                      dataType="wstr"
+                      length="128"
+                      name="Nombre" />
+                    <externalMetadataColumn
+                      refId="Package\DIM_SUCURSAL\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[Ciudad]"
+                      dataType="wstr"
+                      length="128"
+                      name="Ciudad" />
+                    <externalMetadataColumn
+                      refId="Package\DIM_SUCURSAL\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[Region]"
+                      dataType="wstr"
+                      length="13"
+                      name="Region" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DIM_SUCURSAL\ADO NET Source.Outputs[ADO NET Source Error Output]"
+                  isErrorOut="true"
+                  name="ADO NET Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DIM_SUCURSAL\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[SucursalId]"
+                      dataType="i8"
+                      lineageId="Package\DIM_SUCURSAL\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[SucursalId]"
+                      name="SucursalId" />
+                    <outputColumn
+                      refId="Package\DIM_SUCURSAL\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[Codigo]"
+                      dataType="wstr"
+                      length="16"
+                      lineageId="Package\DIM_SUCURSAL\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[Codigo]"
+                      name="Codigo" />
+                    <outputColumn
+                      refId="Package\DIM_SUCURSAL\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[Nombre]"
+                      dataType="wstr"
+                      length="128"
+                      lineageId="Package\DIM_SUCURSAL\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[Nombre]"
+                      name="Nombre" />
+                    <outputColumn
+                      refId="Package\DIM_SUCURSAL\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[Ciudad]"
+                      dataType="wstr"
+                      length="128"
+                      lineageId="Package\DIM_SUCURSAL\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[Ciudad]"
+                      name="Ciudad" />
+                    <outputColumn
+                      refId="Package\DIM_SUCURSAL\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[Region]"
+                      dataType="wstr"
+                      length="13"
+                      lineageId="Package\DIM_SUCURSAL\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[Region]"
+                      name="Region" />
+                    <outputColumn
+                      refId="Package\DIM_SUCURSAL\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DIM_SUCURSAL\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DIM_SUCURSAL\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DIM_SUCURSAL\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DIM_SUCURSAL.Paths[ADO NET Source Output]"
+              endId="Package\DIM_SUCURSAL\ADO NET Destination.Inputs[ADO NET Destination Input]"
+              name="ADO NET Source Output"
+              startId="Package\DIM_SUCURSAL\ADO NET Source.Outputs[ADO NET Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Execute SQL Task"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{965AF97E-6935-4CFC-855D-75EF625FFE1D}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Execute SQL Task"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{9D56B3D7-DF42-404E-B0DB-CB37E3A2D119}"
+          SQLTask:SqlStatementSource="USE UsuariosDW;&#xA;GO&#xA;&#xA;-- 1. Limpiar datos existentes&#xA;DELETE FROM UsuariosDW.dw.DIM_TIEMPO;&#xA;GO&#xA;&#xA;-- 2. Generar e insertar fechas&#xA;WITH FechasRecursivas AS (&#xA;    SELECT CAST('2015-01-01' AS DATE) AS Fecha&#xA;    UNION ALL&#xA;    SELECT DATEADD(DAY, 1, Fecha)&#xA;    FROM FechasRecursivas&#xA;    WHERE Fecha &lt; '2090-12-31'&#xA;)&#xA;INSERT INTO UsuariosDW.dw.DIM_TIEMPO (&#xA;    Fecha, &#xA;    Anio, &#xA;    Mes, &#xA;    Trimestre,&#xA;    NombreMes&#xA;)&#xA;SELECT&#xA;    Fecha,&#xA;    YEAR(Fecha) AS Anio,&#xA;    MONTH(Fecha) AS Mes,&#xA;    DATEPART(QUARTER, Fecha) AS Trimestre,&#xA;    CASE MONTH(Fecha)&#xA;        WHEN 1 THEN N'Enero'&#xA;        WHEN 2 THEN N'Febrero'&#xA;        WHEN 3 THEN N'Marzo'&#xA;        WHEN 4 THEN N'Abril'&#xA;        WHEN 5 THEN N'Mayo'&#xA;        WHEN 6 THEN N'Junio'&#xA;        WHEN 7 THEN N'Julio'&#xA;        WHEN 8 THEN N'Agosto'&#xA;        WHEN 9 THEN N'Septiembre'&#xA;        WHEN 10 THEN N'Octubre'&#xA;        WHEN 11 THEN N'Noviembre'&#xA;        WHEN 12 THEN N'Diciembre'&#xA;    END AS NombreMes&#xA;FROM FechasRecursivas&#xA;OPTION (MAXRECURSION 0);" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{3469E693-5277-494A-8D16-DAD5770B10BB}"
+      DTS:From="Package\Execute SQL Task"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\DIM_SUCURSAL" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{581AB976-D4A0-494F-8844-C136F191E3A8}"
+      DTS:From="Package\DIM_SUCURSAL"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\DIM_ROL" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{346F5456-AAF0-4AB2-A748-F59925CEAF83}"
+      DTS:From="Package\DIM_ROL"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\Data Flow Task" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="155,42"
+          Id="Package\DIM_SUCURSAL"
+          TopLeft="236,152" />
+        <NodeLayout
+          Size="163,42"
+          Id="Package\Execute SQL Task"
+          TopLeft="277,61" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="358.5,103">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-45,49"
+              Start="0,0"
+              End="-45,41.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.5"
+                    Point2="0,24.5"
+                    Point3="-4,24.5" />
+                  <mssgle:LineSegment
+                    End="-41,24.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-41,24.5"
+                    Point2="-45,24.5"
+                    Point3="-45,28.5" />
+                  <mssgle:LineSegment
+                    End="-45,41.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="124,42"
+          Id="Package\DIM_ROL"
+          TopLeft="226,247" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="313.5,194">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-25.5,53"
+              Start="0,0"
+              End="-25.5,45.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,22.5"
+                    Point2="0,26.5"
+                    Point3="-4,26.5" />
+                  <mssgle:LineSegment
+                    End="-21.5,26.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-21.5,26.5"
+                    Point2="-25.5,26.5"
+                    Point3="-25.5,30.5" />
+                  <mssgle:LineSegment
+                    End="-25.5,45.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="151,42"
+          Id="Package\Data Flow Task"
+          TopLeft="290,342" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="288,289">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="77.5,53"
+              Start="0,0"
+              End="77.5,45.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,22.5"
+                    Point2="0,26.5"
+                    Point3="4,26.5" />
+                  <mssgle:LineSegment
+                    End="73.5,26.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="73.5,26.5"
+                    Point2="77.5,26.5"
+                    Point3="77.5,30.5" />
+                  <mssgle:LineSegment
+                    End="77.5,45.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\DIM_SUCURSAL">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="158,42"
+          Id="Package\DIM_SUCURSAL\ADO NET Source"
+          TopLeft="219,212" />
+        <NodeLayout
+          Size="179,42"
+          Id="Package\DIM_SUCURSAL\ADO NET Destination"
+          TopLeft="505,219" />
+        <EdgeLayout
+          Id="Package\DIM_SUCURSAL.Paths[ADO NET Source Output]"
+          TopLeft="377,236.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="128,0"
+              Start="0,0"
+              End="120.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="120.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DIM_SUCURSAL\ADO NET Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DIM_SUCURSAL\ADO NET Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\DIM_ROL">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="158,42"
+          Id="Package\DIM_ROL\ADO NET Source"
+          TopLeft="216,134" />
+        <NodeLayout
+          Size="179,42"
+          Id="Package\DIM_ROL\ADO NET Destination"
+          TopLeft="506,160" />
+        <EdgeLayout
+          Id="Package\DIM_ROL.Paths[ADO NET Source Output]"
+          TopLeft="374,155">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="132,26"
+              Start="0,0"
+              End="124.5,26">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="62,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="62,0"
+                    Point2="66,0"
+                    Point3="66,4" />
+                  <mssgle:LineSegment
+                    End="66,22" />
+                  <mssgle:CubicBezierSegment
+                    Point1="66,22"
+                    Point2="66,26"
+                    Point3="70,26" />
+                  <mssgle:LineSegment
+                    End="124.5,26" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DIM_ROL\ADO NET Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DIM_ROL\ADO NET Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Data Flow Task">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="158,42"
+          Id="Package\Data Flow Task\ADO NET Source"
+          TopLeft="231,160" />
+        <NodeLayout
+          Size="179,42"
+          Id="Package\Data Flow Task\ADO NET Destination"
+          TopLeft="561,200" />
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[ADO NET Source Output]"
+          TopLeft="389,181">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="172,40"
+              Start="0,0"
+              End="164.5,40">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="82,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="82,0"
+                    Point2="86,0"
+                    Point3="86,4" />
+                  <mssgle:LineSegment
+                    End="86,36" />
+                  <mssgle:CubicBezierSegment
+                    Point1="86,36"
+                    Point2="86,40"
+                    Point3="90,40" />
+                  <mssgle:LineSegment
+                    End="164.5,40" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\ADO NET Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\ADO NET Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

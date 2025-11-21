@@ -1,0 +1,126 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\jaav2\\source\\repos\\CUBO_CLIENTE\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{0EAEF54E-FB7D-43D8-8550-E11B63C484B4}|CUBO_CLIENTE\\CUBO_CLIENTE.dwproj|C:\\Users\\jaav2\\source\\repos\\CUBO_CLIENTE\\CUBO_CLIENTE\\Clientes DW.cube||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
+      "RelativeMoniker": "D:0:0:{0EAEF54E-FB7D-43D8-8550-E11B63C484B4}|CUBO_CLIENTE\\CUBO_CLIENTE.dwproj|solutionrelative:CUBO_CLIENTE\\Clientes DW.cube||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0EAEF54E-FB7D-43D8-8550-E11B63C484B4}|CUBO_CLIENTE\\CUBO_CLIENTE.dwproj|C:\\Users\\jaav2\\source\\repos\\CUBO_CLIENTE\\CUBO_CLIENTE\\DIM TIEMPO.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
+      "RelativeMoniker": "D:0:0:{0EAEF54E-FB7D-43D8-8550-E11B63C484B4}|CUBO_CLIENTE\\CUBO_CLIENTE.dwproj|solutionrelative:CUBO_CLIENTE\\DIM TIEMPO.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0EAEF54E-FB7D-43D8-8550-E11B63C484B4}|CUBO_CLIENTE\\CUBO_CLIENTE.dwproj|C:\\Users\\jaav2\\source\\repos\\CUBO_CLIENTE\\CUBO_CLIENTE\\DIM GENERO.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
+      "RelativeMoniker": "D:0:0:{0EAEF54E-FB7D-43D8-8550-E11B63C484B4}|CUBO_CLIENTE\\CUBO_CLIENTE.dwproj|solutionrelative:CUBO_CLIENTE\\DIM GENERO.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0EAEF54E-FB7D-43D8-8550-E11B63C484B4}|CUBO_CLIENTE\\CUBO_CLIENTE.dwproj|C:\\Users\\jaav2\\source\\repos\\CUBO_CLIENTE\\CUBO_CLIENTE\\DIM RISK GRADE.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
+      "RelativeMoniker": "D:0:0:{0EAEF54E-FB7D-43D8-8550-E11B63C484B4}|CUBO_CLIENTE\\CUBO_CLIENTE.dwproj|solutionrelative:CUBO_CLIENTE\\DIM RISK GRADE.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0EAEF54E-FB7D-43D8-8550-E11B63C484B4}|CUBO_CLIENTE\\CUBO_CLIENTE.dwproj|C:\\Users\\jaav2\\source\\repos\\CUBO_CLIENTE\\CUBO_CLIENTE\\DIM SUCURSAL.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
+      "RelativeMoniker": "D:0:0:{0EAEF54E-FB7D-43D8-8550-E11B63C484B4}|CUBO_CLIENTE\\CUBO_CLIENTE.dwproj|solutionrelative:CUBO_CLIENTE\\DIM SUCURSAL.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0EAEF54E-FB7D-43D8-8550-E11B63C484B4}|CUBO_CLIENTE\\CUBO_CLIENTE.dwproj|C:\\Users\\jaav2\\source\\repos\\CUBO_CLIENTE\\CUBO_CLIENTE\\DIM TIPO CLIENTE.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
+      "RelativeMoniker": "D:0:0:{0EAEF54E-FB7D-43D8-8550-E11B63C484B4}|CUBO_CLIENTE\\CUBO_CLIENTE.dwproj|solutionrelative:CUBO_CLIENTE\\DIM TIPO CLIENTE.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0EAEF54E-FB7D-43D8-8550-E11B63C484B4}|CUBO_CLIENTE\\CUBO_CLIENTE.dwproj|C:\\Users\\jaav2\\source\\repos\\CUBO_CLIENTE\\CUBO_CLIENTE\\Clientes DW.dsv||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
+      "RelativeMoniker": "D:0:0:{0EAEF54E-FB7D-43D8-8550-E11B63C484B4}|CUBO_CLIENTE\\CUBO_CLIENTE.dwproj|solutionrelative:CUBO_CLIENTE\\Clientes DW.dsv||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "DIM TIEMPO.dim [Design]",
+              "DocumentMoniker": "C:\\Users\\jaav2\\source\\repos\\CUBO_CLIENTE\\CUBO_CLIENTE\\DIM TIEMPO.dim",
+              "RelativeDocumentMoniker": "CUBO_CLIENTE\\DIM TIEMPO.dim",
+              "ToolTip": "C:\\Users\\jaav2\\source\\repos\\CUBO_CLIENTE\\CUBO_CLIENTE\\DIM TIEMPO.dim [Design]",
+              "RelativeToolTip": "CUBO_CLIENTE\\DIM TIEMPO.dim [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-11-19T19:36:08.82Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DIM GENERO.dim [Design]",
+              "DocumentMoniker": "C:\\Users\\jaav2\\source\\repos\\CUBO_CLIENTE\\CUBO_CLIENTE\\DIM GENERO.dim",
+              "RelativeDocumentMoniker": "CUBO_CLIENTE\\DIM GENERO.dim",
+              "ToolTip": "C:\\Users\\jaav2\\source\\repos\\CUBO_CLIENTE\\CUBO_CLIENTE\\DIM GENERO.dim [Design]",
+              "RelativeToolTip": "CUBO_CLIENTE\\DIM GENERO.dim [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-11-19T19:36:00.935Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "DIM RISK GRADE.dim [Design]",
+              "DocumentMoniker": "C:\\Users\\jaav2\\source\\repos\\CUBO_CLIENTE\\CUBO_CLIENTE\\DIM RISK GRADE.dim",
+              "RelativeDocumentMoniker": "CUBO_CLIENTE\\DIM RISK GRADE.dim",
+              "ToolTip": "C:\\Users\\jaav2\\source\\repos\\CUBO_CLIENTE\\CUBO_CLIENTE\\DIM RISK GRADE.dim [Design]",
+              "RelativeToolTip": "CUBO_CLIENTE\\DIM RISK GRADE.dim [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-11-19T19:35:52.268Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "DIM SUCURSAL.dim [Design]",
+              "DocumentMoniker": "C:\\Users\\jaav2\\source\\repos\\CUBO_CLIENTE\\CUBO_CLIENTE\\DIM SUCURSAL.dim",
+              "RelativeDocumentMoniker": "CUBO_CLIENTE\\DIM SUCURSAL.dim",
+              "ToolTip": "C:\\Users\\jaav2\\source\\repos\\CUBO_CLIENTE\\CUBO_CLIENTE\\DIM SUCURSAL.dim [Design]",
+              "RelativeToolTip": "CUBO_CLIENTE\\DIM SUCURSAL.dim [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-11-19T19:35:45.776Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Clientes DW.cube [Design]",
+              "DocumentMoniker": "C:\\Users\\jaav2\\source\\repos\\CUBO_CLIENTE\\CUBO_CLIENTE\\Clientes DW.cube",
+              "RelativeDocumentMoniker": "CUBO_CLIENTE\\Clientes DW.cube",
+              "ToolTip": "C:\\Users\\jaav2\\source\\repos\\CUBO_CLIENTE\\CUBO_CLIENTE\\Clientes DW.cube [Design]",
+              "RelativeToolTip": "CUBO_CLIENTE\\Clientes DW.cube [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-11-19T19:35:32.513Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "DIM TIPO CLIENTE.dim [Design]",
+              "DocumentMoniker": "C:\\Users\\jaav2\\source\\repos\\CUBO_CLIENTE\\CUBO_CLIENTE\\DIM TIPO CLIENTE.dim",
+              "RelativeDocumentMoniker": "CUBO_CLIENTE\\DIM TIPO CLIENTE.dim",
+              "ToolTip": "C:\\Users\\jaav2\\source\\repos\\CUBO_CLIENTE\\CUBO_CLIENTE\\DIM TIPO CLIENTE.dim [Design]",
+              "RelativeToolTip": "CUBO_CLIENTE\\DIM TIPO CLIENTE.dim [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-11-19T19:35:37.443Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Clientes DW.dsv [Design]",
+              "DocumentMoniker": "C:\\Users\\jaav2\\source\\repos\\CUBO_CLIENTE\\CUBO_CLIENTE\\Clientes DW.dsv",
+              "RelativeDocumentMoniker": "CUBO_CLIENTE\\Clientes DW.dsv",
+              "ToolTip": "C:\\Users\\jaav2\\source\\repos\\CUBO_CLIENTE\\CUBO_CLIENTE\\Clientes DW.dsv [Design]",
+              "RelativeToolTip": "CUBO_CLIENTE\\Clientes DW.dsv [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-11-19T19:34:53.759Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

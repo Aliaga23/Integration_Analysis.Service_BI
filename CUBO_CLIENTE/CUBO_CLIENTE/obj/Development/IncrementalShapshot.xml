@@ -1,0 +1,89 @@
+﻿<DeploymentSnapshot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0">
+  <Target>
+    <Database>CUBO_CLIENTE</Database>
+    <Server>localhost</Server>
+    <ConnectionString>Data Source=localhost;Timeout=0</ConnectionString>
+  </Target>
+  <Options>
+    <TransactionalDeployment>false</TransactionalDeployment>
+    <PartitionDeployment>DeployPartitions</PartitionDeployment>
+    <RoleDeployment>DeployRolesRetainMembers</RoleDeployment>
+    <ProcessingOption>DoNotProcess</ProcessingOption>
+    <OutputScript></OutputScript>
+    <ImpactAnalysisFile></ImpactAnalysisFile>
+    <ConfigurationSettingsDeployment>Deploy</ConfigurationSettingsDeployment>
+    <OptimizationSettingsDeployment>Deploy</OptimizationSettingsDeployment>
+    <WriteBackTableCreation>UseExisting</WriteBackTableCreation>
+  </Options>
+  <Snapshot>
+    <ObjectSnapshots>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.RelationalDataSource</Type>
+        <TimeStamp>U5BNCh68PogBVfF7zbZ462ATo8c=19/11/2025 15:34:2219/11/2025 14:54:14</TimeStamp>
+        <ID>
+          <String>Clientes DW</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.DataSourceView</Type>
+        <TimeStamp>YxNULzAYFFelotru3TMHBwTwpCM=19/11/2025 15:35:3219/11/2025 15:34:52</TimeStamp>
+        <ID>
+          <String>Clientes DW</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>ZzbwtdUzMAyinz/sYZke5PCN7mg=19/11/2025 15:36:1719/11/2025 15:35:32</TimeStamp>
+        <ID>
+          <String>DIM TIPO CLIENTE</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>47kyKGYahgKfEg+PfAMhhVP0hFE=19/11/2025 15:36:1719/11/2025 15:35:32</TimeStamp>
+        <ID>
+          <String>DIM SUCURSAL</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>Yr7Ql/r6lM+lKJcV6iR6hbpM+eQ=19/11/2025 15:36:1719/11/2025 15:35:32</TimeStamp>
+        <ID>
+          <String>DIM RISK GRADE</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>pwc3f6JhU7xCipfIorbXUY9MHzM=19/11/2025 15:36:1719/11/2025 15:35:32</TimeStamp>
+        <ID>
+          <String>DIM GENERO</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>2j6j/leqfi4wz4uvJOceYx5OwwY=19/11/2025 15:36:1719/11/2025 15:35:32</TimeStamp>
+        <ID>
+          <String>DIM TIEMPO</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Cube</Type>
+        <TimeStamp>jMk6BjXdi3DjvX/Yh/r5438eDXg=19/11/2025 15:42:3319/11/2025 15:35:32XjtjPbM2g0z4tGwiuBe2zXVrRlg=19/11/2025 15:35:3219/11/2025 15:35:32</TimeStamp>
+        <ID>
+          <String>Clientes DW</String>
+        </ID>
+      </ObjectSnapshot>
+    </ObjectSnapshots>
+    <DatabaseSnapshot>
+      <Type>Microsoft.AnalysisServices.Database</Type>
+      <TimeStamp>WG4xO4f+0WGScAu0y07NICFP9v4=19/11/2025 14:53:2219/11/2025 14:53:22</TimeStamp>
+      <ID>
+        <String>CUBO_CLIENTE</String>
+      </ID>
+    </DatabaseSnapshot>
+    <Granularity>Coarse</Granularity>
+  </Snapshot>
+  <AssemblyLocations />
+  <ProcessingComplete>true</ProcessingComplete>
+  <LastDeployed>2025-11-19T19:42:38.84Z</LastDeployed>
+</DeploymentSnapshot>

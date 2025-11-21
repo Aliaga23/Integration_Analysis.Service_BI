@@ -1,0 +1,132 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\jaav2\\source\\repos\\CUBO_USUARIOS\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{E3BA97A1-6215-4C3F-B674-FBDACA1C6224}|CUBO_USUARIOS\\CUBO_USUARIOS.dwproj|C:\\Users\\jaav2\\source\\repos\\CUBO_USUARIOS\\CUBO_USUARIOS\\DIM SUCURSAL.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
+      "RelativeMoniker": "D:0:0:{E3BA97A1-6215-4C3F-B674-FBDACA1C6224}|CUBO_USUARIOS\\CUBO_USUARIOS.dwproj|solutionrelative:CUBO_USUARIOS\\DIM SUCURSAL.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E3BA97A1-6215-4C3F-B674-FBDACA1C6224}|CUBO_USUARIOS\\CUBO_USUARIOS.dwproj|C:\\Users\\jaav2\\source\\repos\\CUBO_USUARIOS\\CUBO_USUARIOS\\DIM ROL.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
+      "RelativeMoniker": "D:0:0:{E3BA97A1-6215-4C3F-B674-FBDACA1C6224}|CUBO_USUARIOS\\CUBO_USUARIOS.dwproj|solutionrelative:CUBO_USUARIOS\\DIM ROL.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E3BA97A1-6215-4C3F-B674-FBDACA1C6224}|CUBO_USUARIOS\\CUBO_USUARIOS.dwproj|C:\\Users\\jaav2\\source\\repos\\CUBO_USUARIOS\\CUBO_USUARIOS\\DIM CANAL.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
+      "RelativeMoniker": "D:0:0:{E3BA97A1-6215-4C3F-B674-FBDACA1C6224}|CUBO_USUARIOS\\CUBO_USUARIOS.dwproj|solutionrelative:CUBO_USUARIOS\\DIM CANAL.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E3BA97A1-6215-4C3F-B674-FBDACA1C6224}|CUBO_USUARIOS\\CUBO_USUARIOS.dwproj|C:\\Users\\jaav2\\source\\repos\\CUBO_USUARIOS\\CUBO_USUARIOS\\DIM TIPO USUARIO.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
+      "RelativeMoniker": "D:0:0:{E3BA97A1-6215-4C3F-B674-FBDACA1C6224}|CUBO_USUARIOS\\CUBO_USUARIOS.dwproj|solutionrelative:CUBO_USUARIOS\\DIM TIPO USUARIO.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E3BA97A1-6215-4C3F-B674-FBDACA1C6224}|CUBO_USUARIOS\\CUBO_USUARIOS.dwproj|C:\\Users\\jaav2\\source\\repos\\CUBO_USUARIOS\\CUBO_USUARIOS\\DIM TIEMPO.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
+      "RelativeMoniker": "D:0:0:{E3BA97A1-6215-4C3F-B674-FBDACA1C6224}|CUBO_USUARIOS\\CUBO_USUARIOS.dwproj|solutionrelative:CUBO_USUARIOS\\DIM TIEMPO.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E3BA97A1-6215-4C3F-B674-FBDACA1C6224}|CUBO_USUARIOS\\CUBO_USUARIOS.dwproj|C:\\Users\\jaav2\\source\\repos\\CUBO_USUARIOS\\CUBO_USUARIOS\\Usuarios DW.cube||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
+      "RelativeMoniker": "D:0:0:{E3BA97A1-6215-4C3F-B674-FBDACA1C6224}|CUBO_USUARIOS\\CUBO_USUARIOS.dwproj|solutionrelative:CUBO_USUARIOS\\Usuarios DW.cube||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E3BA97A1-6215-4C3F-B674-FBDACA1C6224}|CUBO_USUARIOS\\CUBO_USUARIOS.dwproj|C:\\Users\\jaav2\\source\\repos\\CUBO_USUARIOS\\CUBO_USUARIOS\\Usuarios DW.dsv||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
+      "RelativeMoniker": "D:0:0:{E3BA97A1-6215-4C3F-B674-FBDACA1C6224}|CUBO_USUARIOS\\CUBO_USUARIOS.dwproj|solutionrelative:CUBO_USUARIOS\\Usuarios DW.dsv||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "DIM SUCURSAL.dim [Design]",
+              "DocumentMoniker": "C:\\Users\\jaav2\\source\\repos\\CUBO_USUARIOS\\CUBO_USUARIOS\\DIM SUCURSAL.dim",
+              "RelativeDocumentMoniker": "CUBO_USUARIOS\\DIM SUCURSAL.dim",
+              "ToolTip": "C:\\Users\\jaav2\\source\\repos\\CUBO_USUARIOS\\CUBO_USUARIOS\\DIM SUCURSAL.dim [Design]",
+              "RelativeToolTip": "CUBO_USUARIOS\\DIM SUCURSAL.dim [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-11-21T21:13:19.757Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "DIM ROL.dim [Design]",
+              "DocumentMoniker": "C:\\Users\\jaav2\\source\\repos\\CUBO_USUARIOS\\CUBO_USUARIOS\\DIM ROL.dim",
+              "RelativeDocumentMoniker": "CUBO_USUARIOS\\DIM ROL.dim",
+              "ToolTip": "C:\\Users\\jaav2\\source\\repos\\CUBO_USUARIOS\\CUBO_USUARIOS\\DIM ROL.dim [Design]",
+              "RelativeToolTip": "CUBO_USUARIOS\\DIM ROL.dim [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-11-21T21:13:12.934Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DIM CANAL.dim [Design]",
+              "DocumentMoniker": "C:\\Users\\jaav2\\source\\repos\\CUBO_USUARIOS\\CUBO_USUARIOS\\DIM CANAL.dim",
+              "RelativeDocumentMoniker": "CUBO_USUARIOS\\DIM CANAL.dim",
+              "ToolTip": "C:\\Users\\jaav2\\source\\repos\\CUBO_USUARIOS\\CUBO_USUARIOS\\DIM CANAL.dim [Design]",
+              "RelativeToolTip": "CUBO_USUARIOS\\DIM CANAL.dim [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-11-21T21:13:04.992Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "DIM TIPO USUARIO.dim [Design]",
+              "DocumentMoniker": "C:\\Users\\jaav2\\source\\repos\\CUBO_USUARIOS\\CUBO_USUARIOS\\DIM TIPO USUARIO.dim",
+              "RelativeDocumentMoniker": "CUBO_USUARIOS\\DIM TIPO USUARIO.dim",
+              "ToolTip": "C:\\Users\\jaav2\\source\\repos\\CUBO_USUARIOS\\CUBO_USUARIOS\\DIM TIPO USUARIO.dim [Design]",
+              "RelativeToolTip": "CUBO_USUARIOS\\DIM TIPO USUARIO.dim [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-11-21T21:12:55.167Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "DIM TIEMPO.dim [Design]",
+              "DocumentMoniker": "C:\\Users\\jaav2\\source\\repos\\CUBO_USUARIOS\\CUBO_USUARIOS\\DIM TIEMPO.dim",
+              "RelativeDocumentMoniker": "CUBO_USUARIOS\\DIM TIEMPO.dim",
+              "ToolTip": "C:\\Users\\jaav2\\source\\repos\\CUBO_USUARIOS\\CUBO_USUARIOS\\DIM TIEMPO.dim [Design]",
+              "RelativeToolTip": "CUBO_USUARIOS\\DIM TIEMPO.dim [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-11-21T21:12:40.2Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Usuarios DW.cube [Design]",
+              "DocumentMoniker": "C:\\Users\\jaav2\\source\\repos\\CUBO_USUARIOS\\CUBO_USUARIOS\\Usuarios DW.cube",
+              "RelativeDocumentMoniker": "CUBO_USUARIOS\\Usuarios DW.cube",
+              "ToolTip": "C:\\Users\\jaav2\\source\\repos\\CUBO_USUARIOS\\CUBO_USUARIOS\\Usuarios DW.cube [Design]",
+              "RelativeToolTip": "CUBO_USUARIOS\\Usuarios DW.cube [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-11-21T21:11:47.112Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Usuarios DW.dsv [Design]",
+              "DocumentMoniker": "C:\\Users\\jaav2\\source\\repos\\CUBO_USUARIOS\\CUBO_USUARIOS\\Usuarios DW.dsv",
+              "RelativeDocumentMoniker": "CUBO_USUARIOS\\Usuarios DW.dsv",
+              "ToolTip": "C:\\Users\\jaav2\\source\\repos\\CUBO_USUARIOS\\CUBO_USUARIOS\\Usuarios DW.dsv [Design]",
+              "RelativeToolTip": "CUBO_USUARIOS\\Usuarios DW.dsv [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-11-21T21:11:11.007Z",
+              "EditorCaption": " [Design]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

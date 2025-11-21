@@ -1,0 +1,182 @@
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="3a25122c-e975-483b-9703-10e8f79b7046" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>DIM SUCURSAL</ID>
+  <Name>DIM SUCURSAL</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+      <Value>
+        <dds xmlns="">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="2" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-3063" scrolltop="-7515" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="9446" y="19024" backcolor="2039583" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+            <font>
+              <ddsxmlobjectstreamwrapper binary="01000000900144420100065461686f6d61" />
+            </font>
+            <mouseicon>
+              <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+            </mouseicon>
+          </diagram>
+          <layoutmanager>
+            <ddsxmlobj />
+          </layoutmanager>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="DIM_SUCURSAL" left="20" top="0" logicalid="1" controlid="1" masterid="0" hint1="0" hint2="0" width="3281" height="3995" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000e0000d10c00009b0f0000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dw_DIM_SUCURSAL" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+        </dds>
+      </Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>-3063</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>-7515</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>20</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="ffc3859e-f67a-48b8-97a2-69bc8c6fd977">
+    <DataSourceViewID>Prestamos DW</DataSourceViewID>
+  </Source>
+  <ErrorConfiguration dwd:design-time-name="dbe24ed7-7aa6-4531-88de-214926499b6a">
+    <KeyNotFound>ReportAndStop</KeyNotFound>
+    <KeyDuplicate>ReportAndStop</KeyDuplicate>
+    <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
+  </ErrorConfiguration>
+  <CurrentStorageMode>Molap</CurrentStorageMode>
+  <Attributes>
+    <Attribute dwd:design-time-name="06784dd4-a6ac-4dd5-b8dd-1717e4af1223">
+      <ID>Sucursal Key</ID>
+      <Name>Sucursal Key</Name>
+      <Usage>Key</Usage>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="1da152cd-80a0-467f-bebd-b59c08512703">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="3e5f9795-1373-477b-89b0-5bdfb6935483">
+            <TableID>dw_DIM_SUCURSAL</TableID>
+            <ColumnID>SucursalKey</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="d5d14e51-a730-402c-887b-de2dea3f1877">
+          <AttributeID>Nombre Sucursal</AttributeID>
+          <Name>Nombre Sucursal</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="27dd651f-c8e7-44cf-9bf7-ba933f3c0f83">
+          <AttributeID>Ciudad Nombre</AttributeID>
+          <Name>Ciudad Nombre</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="c6836349-cbcc-48c0-b5fd-565902926f80">
+          <AttributeID>Region Sucursal</AttributeID>
+          <Name>Region Sucursal</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="f4c4f749-4289-476b-80a9-be359722f4d3">
+          <AttributeID>Pais Sucursal</AttributeID>
+          <Name>Pais Sucursal</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="018591dd-af32-45e5-ab5f-bba95b9809b3">
+      <ID>Nombre Sucursal</ID>
+      <Name>Nombre Sucursal</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="6c5ce4fb-3bc7-494c-a02f-39afbe154129">
+          <DataType>WChar</DataType>
+          <DataSize>128</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="2466854a-dfde-4fc8-bcb1-2610bb9361f6">
+            <TableID>dw_DIM_SUCURSAL</TableID>
+            <ColumnID>NombreSucursal</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="9c894c7e-86c6-4b7a-875e-ac266868d059">
+      <ID>Ciudad Nombre</ID>
+      <Name>Ciudad Nombre</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="d3fe8854-4a0b-4598-ba6f-d31b3ccdde64">
+          <DataType>WChar</DataType>
+          <DataSize>100</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="39876a99-5805-4d0e-a4fd-599eea309ccd">
+            <TableID>dw_DIM_SUCURSAL</TableID>
+            <ColumnID>CiudadNombre</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="5399c1ca-6cd0-4755-9582-dcc692b2fec6">
+      <ID>Region Sucursal</ID>
+      <Name>Region Sucursal</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="d5ea8097-e903-4988-9ebf-75082edbfa74">
+          <DataType>WChar</DataType>
+          <DataSize>100</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="bc0956a5-4845-49b1-ae31-cd16d5e4f4f3">
+            <TableID>dw_DIM_SUCURSAL</TableID>
+            <ColumnID>RegionSucursal</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="e3657ff4-32cd-433f-92df-8a79a1a6113c">
+      <ID>Pais Sucursal</ID>
+      <Name>Pais Sucursal</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="cf3dd4f2-1767-4e9e-bc93-e282fb13caf4">
+          <DataType>WChar</DataType>
+          <DataSize>100</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="66b49abe-3797-418a-b6f8-b63c8b338cb0">
+            <TableID>dw_DIM_SUCURSAL</TableID>
+            <ColumnID>PaisSucursal</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+  </Attributes>
+  <ddl300:ProcessingState>Unprocessed</ddl300:ProcessingState>
+</Dimension>
